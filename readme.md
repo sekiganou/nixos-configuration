@@ -1,1 +1,1 @@
-first commit
+My NixOS Configurations

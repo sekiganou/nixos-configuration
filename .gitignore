@@ -1,0 +1,16 @@
+# Hardware-specific files that shouldn't be shared
+hardware-configuration.nix
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# Build results
+result
+result-*
+
+# Secrets (if any)
+secrets/
+*.key
+*.pem
