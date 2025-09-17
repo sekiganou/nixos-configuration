@@ -22,6 +22,7 @@ update: check-host
 .PHONY: regenerate-hardware-configuration
 regenerate-hardware-configuration: check-host
 	sudo nixos-generate-config --dir ..
+	mkdir -p ./hosts/${HOST}
 	sudo mv ../hardware-configuration.nix ./hosts/${HOST}
 	sudo rm ../configuration.nix
 
