@@ -10,6 +10,7 @@
         ms-vscode-remote.remote-ssh
         jnoortheen.nix-ide
         github.copilot
+        ms-vscode.makefile-tools
     ];
   };
 }
