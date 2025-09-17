@@ -11,14 +11,36 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    # use "nixos", or your hostname as the name of the configuration
-    # it's a better practice than "default" shown in the video
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./configuration.nix
-        inputs.home-manager.nixosModules.default
-      ];
-    };
+
+    nixosConfigurations = {
+      laptop-asus = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/laptop-asus/configuration.nix
+          ./modules/system/base.nix
+          ./modules/locale/italy.nix
+          ./modules/audio/pipewire.nix
+          ./modules/desktop/plasma6.nix
+          ./modules/dev/common.nix
+          ./modules/users/alessio.nix
+          ./modules/tailscale/tailscale.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+      desktop-lenovo = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/desktop-lenovo/configuration.nix
+          ./modules/system/base.nix
+          ./modules/locale/italy.nix
+          ./modules/audio/pipewire.nix
+          ./modules/desktop/plasma6.nix
+          ./modules/dev/common.nix
+          ./modules/users/alessio.nix
+          ./modules/tailscale/tailscale.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+    }; 
   };
 }

@@ -20,19 +20,6 @@
         "type": "github"
       }
     },
-    "nixos-config": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1758104308,
-        "narHash": "sha256-q9OJrak3mnUZtrXJ800b1hleNvu0IWLsagCXWcPn4CE=",
-        "path": "/home/alessio/nixos-configuration",
-        "type": "path"
-      },
-      "original": {
-        "path": "/home/alessio/nixos-configuration",
-        "type": "path"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1757745802,
@@ -52,7 +39,6 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixos-config": "nixos-config",
         "nixpkgs": "nixpkgs"
       }
     }
