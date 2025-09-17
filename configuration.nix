@@ -44,25 +44,7 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  # services.xserver.enable = true;
-
-  services.xserver = {
-    enable = true;
-
-    # Enable i3 as a desktop manager
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-        dmenu      # application launcher
-        i3status   # status bar
-        i3lock     # screen locker
-        i3blocks   # alternative status bar
-      ];
-    };
-
-    # Optional: Set i3 as default
-    displayManager.defaultSession = "none+i3";
-  };
+  services.xserver.enable = false;
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
@@ -178,6 +160,8 @@
   };
 
   virtualisation.docker.enable = true;
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
