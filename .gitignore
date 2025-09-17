@@ -1,5 +1,5 @@
 # Hardware-specific files that shouldn't be shared
-hardware-configuration.nix
+# hardware-configuration.nix
 
 # Temporary files
 *.tmp
