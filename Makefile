@@ -14,7 +14,7 @@ update:
 
 regenerate-hardware-configuration:
 	sudo nixos-generate-config --dir ..
-	sudo cp ../hardware-configuration.nix .
+	sudo mv ../hardware-configuration.nix .
 	sudo rm ../configuration.nix
 
 prune:
