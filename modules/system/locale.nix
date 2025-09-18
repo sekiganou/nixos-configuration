@@ -1,5 +1,9 @@
 { config, lib, pkgs, ... }:
 {
+  options = {
+    system.locale.enable = lib.mkEnableOption "Enable locale settings for Italy";
+  };
+  config = lib.mkIf config.system.locale.enable {
   time.timeZone = "Europe/Rome";
   
   i18n.defaultLocale = "en_US.UTF-8";
@@ -21,4 +25,5 @@
   };
   
   console.keyMap = "it2";
+  };
 }

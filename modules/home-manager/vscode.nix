@@ -1,15 +1,10 @@
 { config, lib, pkgs, ... }:
 {
-  virtualisation.docker.enable = true;
-  
-  environment.systemPackages = with pkgs; [
-    git
-    gnumake
-  ];
-  
-  programs.firefox.enable = true;
-  nixpkgs.config.allowUnfree = true;
+  options = {
+    home-manager.vscode.enable = lib.mkEnableOption "Enable VSCode with specific extensions";
+  };
 
+  config = lib.mkIf config.home-manager.vscode.enable {
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
@@ -23,5 +18,6 @@
         github.copilot-chat
         ms-vscode.makefile-tools
     ];
+  };
   };
 }

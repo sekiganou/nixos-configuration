@@ -1,5 +1,10 @@
 { config, lib, pkgs, inputs, ... }:
 {
+  options = {
+    system.user.enable = lib.mkEnableOption "Enable user 'alessio' with specific settings";
+  };
+
+  config = lib.mkIf config.system.user.enable {
   users.users.alessio = {
     isNormalUser = true;
     description = "Alessio Bagno";
@@ -15,5 +20,6 @@
     users = {
       "alessio" = import ../../hosts/${config.networking.hostName}/home.nix;
     };
+  };
   };
 }

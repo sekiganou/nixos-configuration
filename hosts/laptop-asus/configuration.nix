@@ -9,9 +9,14 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-      #../../modules/home-manager/vscode.nix
     ];
+
+  system.dev.enable = true;
+  system.locale.enable = true;
+  system.plasma6.enable = true;
+  system.tailscale.enable = true;
 
   networking.hostName = "laptop-asus"; # Define your hostname.
 
+  # nixpkgs.config.allowUnfree = true;
 }
