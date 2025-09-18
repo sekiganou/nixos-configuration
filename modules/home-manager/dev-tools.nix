@@ -14,6 +14,7 @@
       tree
       htop
       neofetch
+      timer
     ];
 
     # programs.git = {
