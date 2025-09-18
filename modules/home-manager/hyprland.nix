@@ -13,6 +13,7 @@
       settings = {
         # Monitor configuration
         monitor = [
+          "eDP-1,2880x1800@90,0x0,2"
           ",preferred,auto,auto"
         ];
 
@@ -26,6 +27,11 @@
           "QT_AUTO_SCREEN_SCALE_FACTOR,1"
           "MOZ_ENABLE_WAYLAND,1"
           "GDK_BACKEND,wayland,x11"
+          # Fix for Electron apps (VS Code, Discord, etc.)
+          "ELECTRON_OZONE_PLATFORM_HINT,auto"
+          # Force proper scaling for applications
+          "GDK_SCALE,1"
+          "QT_SCALE_FACTOR,1"
         ];
 
         # Input configuration
@@ -60,10 +66,10 @@
           active_opacity = 1.0;
           inactive_opacity = 1.0;
           
-          drop_shadow = true;
-          shadow_range = 4;
-          shadow_render_power = 3;
-          "col.shadow" = "rgba(1a1a1aee)";
+          # drop_shadow = true;
+          # shadow_range = 4;
+          # shadow_render_power = 3;
+          # "col.shadow" = "rgba(1a1a1aee)";
           
           blur = {
             enabled = true;
@@ -104,17 +110,17 @@
         };
 
         # Keybindings
-        "$mainMod" = "SUPER";
+        "$mainMod" = "ALT";
         bind = [
           # Application shortcuts
-          "$mainMod, Q, exec, kitty"
-          "$mainMod, C, killactive,"
+          "$mainMod, C, exec, kitty"
+          "$mainMod, Q, killactive,"
           "$mainMod, M, exit,"
           "$mainMod, E, exec, thunar"
           "$mainMod, V, togglefloating,"
-          "$mainMod, R, exec, rofi -show drun"
+          "$mainMod, space, exec, rofi -show drun"
           "$mainMod, P, pseudo,"
-          "$mainMod, J, togglesplit,"
+          "$mainMod, D, togglesplit,"
           "$mainMod, F, fullscreen,"
           
           # Screenshot
@@ -131,6 +137,11 @@
           "$mainMod, l, movefocus, r"
           "$mainMod, k, movefocus, u"
           "$mainMod, j, movefocus, d"
+
+          "$mainMod SHIFT, h, movewindow, l"
+          "$mainMod SHIFT, l, movewindow, r"
+          "$mainMod SHIFT, k, movewindow, u"
+          "$mainMod SHIFT, j, movewindow, d"
           
           # Switch workspaces with mainMod + [0-9]
           "$mainMod, 1, workspace, 1"
@@ -440,7 +451,7 @@
         # Theme
         foreground = "#dddddd";
         background = "#000000";
-        background_opacity = "0.8";
+        background_opacity = "0.5";
         
         # Window settings
         window_padding_width = 10;
