@@ -1,10 +1,10 @@
 { config, lib, pkgs, ... }:
 {
-  options = {
-    home-manager.vscode.enable = lib.mkEnableOption "Enable VSCode with extensions";
-  };
+#  options = {
+#    home-manager.vscode.enable = lib.mkEnableOption "Enable VSCode with extensions";
+#  };
 
-  config = lib.mkIf config.home-manager.vscode.enable {
+#  config = lib.mkIf config.home-manager.vscode.enable {
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
@@ -19,5 +19,5 @@
         ms-vscode.makefile-tools
     ];
   };
-  };
+#  };
 }
