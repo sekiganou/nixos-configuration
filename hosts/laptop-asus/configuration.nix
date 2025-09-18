@@ -17,5 +17,13 @@
 
   networking.hostName = "laptop-asus"; # Define your hostname.
 
+  # Configure Home Manager
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      alessio = import ./home.nix;
+    };
+  };
+
   # nixpkgs.config.allowUnfree = true;
 }
