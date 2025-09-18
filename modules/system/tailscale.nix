@@ -1,7 +1,13 @@
 { config, lib, pkgs, ... }:
 {
+  options = {
+    system.tailscale.enable = lib.mkEnableOption "Enable Tailscale VPN client";
+  };
+
+  config = lib.mkIf config.system.tailscale.enable {
   environment.systemPackages = with pkgs; [
     tailscale
+    trayscale # Unofficial GUI for Tailscale
   ];
 
   services.tailscale.enable = true;
@@ -30,7 +36,8 @@
       fi
 
       # otherwise authenticate with tailscale
-      ${tailscale}/bin/tailscale up -authkey ./auth.key
+      ${tailscale}/bin/tailscale up -authkey ../ts-auth.key
     '';
+  };
   };
 }

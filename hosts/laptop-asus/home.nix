@@ -18,6 +18,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    # pkgs.hello
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -71,10 +72,12 @@
     # EDITOR = "emacs";
   };
 
+  imports = [
+	../../modules/home-manager-bundle.nix
+  ];
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  imports = [
-    ../../modules/home-manager/hyprland.nix
-  ];
+  # wayland.windowManager.hyprland.enable = true;
 }

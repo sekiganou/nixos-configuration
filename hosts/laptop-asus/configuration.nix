@@ -9,10 +9,21 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-      # ../../modules/home-manager/vscode.nix
-      # ../../modules/home-manager/hyprland.nix
     ];
+
+  system.dev.enable = true;
+  system.plasma6.enable = true;
+  system.tailscale.enable = true;
 
   networking.hostName = "laptop-asus"; # Define your hostname.
 
+  # Configure Home Manager
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      alessio = import ./home.nix;
+    };
+  };
+
+  # nixpkgs.config.allowUnfree = true;
 }

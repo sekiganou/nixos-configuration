@@ -1,6 +1,10 @@
 { config, lib, pkgs, ... }:
 {
-  services.pulseaudio.enable = false;
+  options = {
+    system.audio.enable = lib.mkEnableOption "Enable audio support (PipeWire)";
+  };
+
+  config = lib.mkIf config.system.audio.enable { services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   
   services.pipewire = {
@@ -8,5 +12,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+  };
   };
 }

@@ -19,13 +19,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/laptop-asus/configuration.nix
-          ./modules/system/base.nix
-          ./modules/locale/italy.nix
-          ./modules/audio/pipewire.nix
-          ./modules/dev/common.nix
-          ./modules/users/alessio.nix
-          ./modules/tailscale/tailscale.nix
-          ./modules/desktop/hyprland.nix
+          ./modules/system-bundle.nix
           inputs.home-manager.nixosModules.default
         ];
       };
@@ -33,13 +27,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/desktop-lenovo/configuration.nix
-          ./modules/system/base.nix
-          ./modules/locale/italy.nix
-          ./modules/audio/pipewire.nix
-          ./modules/desktop/plasma6.nix
-          ./modules/dev/common.nix
-          ./modules/users/alessio.nix
-          ./modules/tailscale/tailscale.nix
+          ./modules/system-bundle.nix
           inputs.home-manager.nixosModules.default
         ];
       };
