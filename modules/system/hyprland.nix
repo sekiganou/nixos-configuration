@@ -11,11 +11,22 @@
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
 
+    # Enable GNOME Keyring for password storage
+    services.gnome.gnome-keyring.enable = true;
+    
+    # Enable D-Bus for proper service communication
+    services.dbus.enable = true;
+    
+    # Enable PAM support for gnome-keyring
+    security.pam.services.login.enableGnomeKeyring = true;
+    security.pam.services.passwd.enableGnomeKeyring = true;
+
     # System packages that need to be available system-wide
     environment.systemPackages = with pkgs; [
       # Essential system utilities
       brightnessctl   # Brightness control (needs system access)
       pamixer         # Audio control
+      gnome-keyring   # Keyring for storing passwords
     ];
 
     # Enable XDG desktop portal

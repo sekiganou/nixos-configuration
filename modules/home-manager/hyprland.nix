@@ -32,11 +32,16 @@
           # Force proper scaling for applications
           "GDK_SCALE,1"
           "QT_SCALE_FACTOR,1"
+          # Keyring integration
+          "SSH_AUTH_SOCK,$XDG_RUNTIME_DIR/keyring/ssh"
+          "GNOME_KEYRING_CONTROL,$XDG_RUNTIME_DIR/keyring"
+          # Enable proper secret service
+          "DBUS_SESSION_BUS_ADDRESS,unix:path=$XDG_RUNTIME_DIR/bus"
         ];
 
         # Input configuration
         input = {
-          kb_layout = "us";
+          kb_layout = "it";
           follow_mouse = 1;
           sensitivity = 0;
           
@@ -116,7 +121,7 @@
           "$mainMod, C, exec, kitty"
           "$mainMod, Q, killactive,"
           "$mainMod, M, exit,"
-          "$mainMod, E, exec, thunar"
+          "$mainMod, E, exec, nautilus"
           "$mainMod, V, togglefloating,"
           "$mainMod, space, exec, rofi -show drun"
           "$mainMod, P, pseudo,"
@@ -211,9 +216,8 @@
       
       # Application launcher
       rofi
-      
-      # File manager
-      # thunar
+
+      nautilus
       
       # Status bar
       waybar
@@ -259,6 +263,12 @@
       
       # Video player
       mpv
+      
+      # Keyring and authentication
+      gnome-keyring
+      polkit_gnome
+      libsecret
+      
     ];
 
     # Configure waybar
@@ -477,6 +487,12 @@
       };
     };
 
+    # Enable GNOME Keyring for password storage
+    services.gnome-keyring = {
+      enable = true;
+      components = [ "pkcs11" "secrets" "ssh" ];
+    };
+
     # Auto-start applications
     wayland.windowManager.hyprland.settings.exec-once = [
       "waybar"
@@ -485,6 +501,10 @@
       "nm-applet --indicator"
       "blueman-applet"
       "swayidle -w timeout 300 'swaylock -f -c 000000' timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000'"
+      # Start polkit authentication agent
+      "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+      # Start GNOME Keyring daemon
+      "gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
     ];
   };
 }
