@@ -121,7 +121,7 @@
           "$mainMod, C, exec, kitty"
           "$mainMod, Q, killactive,"
           "$mainMod, M, exit,"
-          "$mainMod, E, exec, nautilus"
+          "$mainMod, E, exec, kitty -e lf"
           "$mainMod, V, togglefloating,"
           "$mainMod, space, exec, rofi -show drun"
           "$mainMod, P, pseudo,"
@@ -217,7 +217,9 @@
       # Application launcher
       rofi
 
+      # File manager
       nautilus
+      lf
       
       # Status bar
       waybar
@@ -236,12 +238,6 @@
       grim
       slurp
       wl-clipboard
-      
-      # Lock screen
-      swaylock-effects
-      
-      # Idle management
-      swayidle
       
       # Network manager applet
       networkmanagerapplet
@@ -502,7 +498,6 @@
       "hyprpaper"
       "nm-applet --indicator"
       "blueman-applet"
-      "swayidle -w timeout 300 'swaylock -f -c 000000' timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000'"
       # Start polkit authentication agent
       "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       # Start GNOME Keyring daemon
