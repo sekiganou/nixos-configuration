@@ -1,29 +1,31 @@
 .PHONY: check-host
 check-host:
-	@if [ -z "${HOSTNAME}" ]; then \
+	@if [ -z "$$HOSTNAME" ]; then \
 		echo "Error: HOSTNAME is not set. Use 'make <target> HOSTNAME=your-hostname' or set it as an environment variable."; \
 		exit 1; \
+	else \
+		echo "Using HOSTNAME=$$HOSTNAME"; \
 	fi
 
 .PHONY: switch
 switch: check-host
-	sudo nixos-rebuild switch --flake ./#${HOSTNAME}
+	sudo nixos-rebuild switch --flake ./#$$HOSTNAME
 
 .PHONY: test
 test: check-host
-	sudo nixos-rebuild test --flake ./#${HOSTNAME}
+	sudo nixos-rebuild test --flake ./#$$HOSTNAME
 
 .PHONY: update
 update: check-host
 	nix flake update
 	sudo nix-channel --update
-	sudo nixos-rebuild switch --flake ./#${HOSTNAME}
+	sudo nixos-rebuild switch --flake ./#$$HOSTNAME
 
 .PHONY: regenerate-hardware-configuration
 regenerate-hardware-configuration: check-host
 	sudo nixos-generate-config --dir ..
-	mkdir -p ./hosts/${HOSTNAME}
-	sudo mv ../hardware-configuration.nix ./hosts/${HOSTNAME}
+	mkdir -p ./hosts/$$HOSTNAME
+	sudo mv ../hardware-configuration.nix ./hosts/$$HOSTNAME
 	sudo rm ../configuration.nix
 
 .PHONY: prune
