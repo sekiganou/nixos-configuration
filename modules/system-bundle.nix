@@ -3,6 +3,7 @@
     ./system/audio.nix
     ./system/base.nix
     ./system/dev.nix
+    ./system/hyprland.nix
     ./system/locale.nix
     ./system/plasma6.nix
     ./system/tailscale.nix
