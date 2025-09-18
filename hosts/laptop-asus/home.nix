@@ -76,8 +76,9 @@
 	../../modules/home-manager-bundle.nix
   ];
 
+  # Enable Hyprland
+  home-manager.hyprland.enable = true;
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  # wayland.windowManager.hyprland.enable = true;
 }

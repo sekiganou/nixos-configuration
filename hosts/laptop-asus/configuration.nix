@@ -12,6 +12,7 @@
     ];
 
   system.dev.enable = true;
+  system.hyprland.enable = true;
   system.plasma6.enable = true;
   system.tailscale.enable = true;
 
