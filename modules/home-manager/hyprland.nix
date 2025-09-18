@@ -125,7 +125,7 @@
           "$mainMod, V, togglefloating,"
           "$mainMod, space, exec, rofi -show drun"
           "$mainMod, P, pseudo,"
-          "$mainMod, D, togglesplit,"
+          # "$mainMod, D, togglesplit,"
           "$mainMod, F, fullscreen,"
           
           # Screenshot
@@ -478,11 +478,13 @@
         splash_offset = 2.0;
         
         preload = [
-          "${pkgs.nixos-artwork.wallpapers.nineish-dark-gray}/share/backgrounds/nixos/nix-wallpaper-nineish-dark-gray.png"
+          "/home/alessio/Pictures/wallpaper.jpg"
+          # "${pkgs.nixos-artwork.wallpapers.nineish-dark-gray}/share/backgrounds/nixos/nix-wallpaper-nineish-dark-gray.png"
         ];
         
         wallpaper = [
-          ",${pkgs.nixos-artwork.wallpapers.nineish-dark-gray}/share/backgrounds/nixos/nix-wallpaper-nineish-dark-gray.png"
+          ",/home/alessio/Pictures/wallpaper.jpg"
+          # ",${pkgs.nixos-artwork.wallpapers.nineish-dark-gray}/share/backgrounds/nixos/nix-wallpaper-nineish-dark-gray.png"
         ];
       };
     };
