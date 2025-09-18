@@ -8,6 +8,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -20,10 +22,10 @@
           ./modules/system/base.nix
           ./modules/locale/italy.nix
           ./modules/audio/pipewire.nix
-          ./modules/desktop/plasma6.nix
           ./modules/dev/common.nix
           ./modules/users/alessio.nix
           ./modules/tailscale/tailscale.nix
+          ./modules/desktop/hyprland.nix
           inputs.home-manager.nixosModules.default
         ];
       };

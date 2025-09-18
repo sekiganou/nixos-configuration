@@ -9,7 +9,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
-      ../../modules/home-manager/vscode.nix
+      # ../../modules/home-manager/vscode.nix
+      # ../../modules/home-manager/hyprland.nix
     ];
 
   networking.hostName = "laptop-asus"; # Define your hostname.
