@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 {
   options = {
-    home-manager.vscode.enable = lib.mkEnableOption "Enable VSCode with specific extensions";
+    home-manager.vscode.enable = lib.mkEnableOption "Enable VSCode with extensions";
   };
 
   config = lib.mkIf config.home-manager.vscode.enable {

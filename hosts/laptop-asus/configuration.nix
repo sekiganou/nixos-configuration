@@ -12,7 +12,6 @@
     ];
 
   system.dev.enable = true;
-  system.locale.enable = true;
   system.plasma6.enable = true;
   system.tailscale.enable = true;
 

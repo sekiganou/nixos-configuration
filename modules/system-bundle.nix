@@ -9,6 +9,7 @@
     ./system/user.nix
   ];
 
+  system.locale.enable = lib.mkDefault true;
   system.audio.enable = lib.mkDefault true;
   system.base.enable = lib.mkDefault true;
   system.user.enable = lib.mkDefault true;
