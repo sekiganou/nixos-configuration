@@ -76,14 +76,13 @@
 	../../modules/home-manager-bundle.nix
   ];
 
-  # Enable Hyprland
-  home-manager.hyprland.enable = true;
-
   home-manager.hyprland.monitors = [
    "DP-1,1920x1080@143.85,0x0,1"        # MSI G24C4 144Hz monitor
     # "HDMI-A-1,1920x1080@60,1920x0,1"   # Secondary monitor (uncomment if needed)
     ",preferred,auto,auto"                 # Auto-configure other monitors
   ];
+
+  home-manager.hyprland.kb_layout = "us";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

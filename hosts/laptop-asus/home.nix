@@ -76,14 +76,13 @@
 	../../modules/home-manager-bundle.nix
   ];
 
-  # Enable Hyprland
-  home-manager.hyprland.enable = true;
-
   home-manager.hyprland.monitors = [
         "eDP-1,2880x1800@90,0x0,2"           # Built-in laptop display with 2x scaling
         "HDMI-A-1,1920x1080@143.85,2880x0,1" # External 144Hz monitor when connected
         ",preferred,auto,auto"                 # Auto-configure other monitors
   ];
+
+  home-manager.hyprland.kb_layout = "it";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
