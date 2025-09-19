@@ -41,7 +41,7 @@
 
         # Input configuration
         input = {
-          kb_layout = "it";
+          kb_layout = "us";
           follow_mouse = 1;
           sensitivity = 0;
           
@@ -127,6 +127,7 @@
           "$mainMod, P, pseudo,"
           # "$mainMod, D, togglesplit,"
           "$mainMod, F, fullscreen,"
+          "SUPER, Escape, exec, wlogout"
           
           # Screenshot
           "$mainMod, S, exec, grim -g \"$(slurp)\" - | wl-copy"
@@ -265,6 +266,7 @@
       polkit_gnome
       libsecret
       
+      wlogout
     ];
 
     # Configure waybar
@@ -474,12 +476,12 @@
         splash_offset = 2.0;
         
         preload = [
-          "/home/alessio/Pictures/wallpaper.jpg"
+          "/home/alessio/Nextcloud/Photos/Wallpapers/hyprland.jpg"
           # "${pkgs.nixos-artwork.wallpapers.nineish-dark-gray}/share/backgrounds/nixos/nix-wallpaper-nineish-dark-gray.png"
         ];
         
         wallpaper = [
-          ",/home/alessio/Pictures/wallpaper.jpg"
+          "/home/alessio/Nextcloud/Photos/Wallpapers/hyprland.jpg"
           # ",${pkgs.nixos-artwork.wallpapers.nineish-dark-gray}/share/backgrounds/nixos/nix-wallpaper-nineish-dark-gray.png"
         ];
       };
@@ -503,5 +505,7 @@
       # Start GNOME Keyring daemon
       "gnome-keyring-daemon --start --components=pkcs11,secrets,ssh"
     ];
+
+
   };
 }
