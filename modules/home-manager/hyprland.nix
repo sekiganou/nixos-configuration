@@ -123,14 +123,14 @@
         "$mainMod" = "ALT";
         bind = [
           # Application shortcuts
-          "$mainMod, C, exec, kitty"
+          "$mainMod, C, exec, kitty --hold bash -c 'neofetch'"
           "$mainMod, Q, killactive,"
           "$mainMod, M, exit,"
           "$mainMod, E, exec, kitty -e lf"
           "$mainMod, V, togglefloating,"
           "$mainMod, space, exec, rofi -show drun"
           "$mainMod, P, pseudo,"
-          # "$mainMod, D, togglesplit,"
+          "$mainMod, D, exec, firefox"
           "$mainMod, F, fullscreen,"
           "SUPER, Escape, exec, wlogout"
           
