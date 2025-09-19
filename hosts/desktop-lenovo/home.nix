@@ -17,7 +17,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # pkgs.hello
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
