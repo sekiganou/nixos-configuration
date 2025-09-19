@@ -49,7 +49,25 @@
         comment = "Jellyfin web app";
         exec = "${pkgs.chromium}/bin/chromium --app=https://jellyfin.dojo-vernier.ts.net";
         icon = "jellyfin";
-        categories = [ "Network" "Video" ];
+        categories = [ "Network" "Video" "Homelab" ];
+        startupNotify = true;
+      };
+
+      nextcloud = {
+        name = "Nextcloud";
+        comment = "Nextcloud web app";
+        exec = "${pkgs.chromium}/bin/chromium --app=https://nextcloud.dojo-vernier.ts.net";
+        icon = "nextcloud";
+        categories = [ "Network" "FileSync" "Homelab" ];
+        startupNotify = true;
+      };
+
+      unito = {
+        name = "Unito";
+        comment = "Unito web app";
+        exec = "${pkgs.chromium}/bin/chromium --app=https://informatica.i-learn.unito.it";
+        icon = "unito";
+        categories = [ "Network" "Productivity" "Education" ];
         startupNotify = true;
       };
 
