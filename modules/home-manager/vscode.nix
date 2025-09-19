@@ -17,7 +17,11 @@
           github.copilot
           github.copilot-chat
           ms-vscode.makefile-tools
+          ms-azuretools.vscode-containers
+          prisma.prisma
       ];
+
     };
+
   };
 }
