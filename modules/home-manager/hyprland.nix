@@ -526,6 +526,7 @@
 
     # Auto-start applications
     wayland.windowManager.hyprland.settings.exec-once = [
+      "gammastep -O 4000" # Start gammastep with night mode
       "waybar"
       "dunst"
       "hyprpaper"
