@@ -11,12 +11,12 @@
         splash_offset = 2.0;
         
         preload = [
-          "/home/alessio/Nextcloud/Photos/Wallpapers/hyprland.jpg"
+          "/home/alessio/Pictures/Wallpapers/hyprland.jpg"
           # "${pkgs.nixos-artwork.wallpapers.nineish-dark-gray}/share/backgrounds/nixos/nix-wallpaper-nineish-dark-gray.png"
         ];
         
         wallpaper = [
-          "/home/alessio/Nextcloud/Photos/Wallpapers/hyprland.jpg"
+          "/home/alessio/Pictures/Wallpapers/hyprland.jpg"
           # ",${pkgs.nixos-artwork.wallpapers.nineish-dark-gray}/share/backgrounds/nixos/nix-wallpaper-nineish-dark-gray.png"
         ];
       };
