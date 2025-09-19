@@ -11,11 +11,6 @@
       inputs.home-manager.nixosModules.default
     ];
 
-  system.dev.enable = true;
-  system.hyprland.enable = true;
-  system.plasma6.enable = true;
-  system.tailscale.enable = true;
-
   networking.hostName = "desktop-lenovo"; # Define your hostname.
 
   # Configure Home Manager

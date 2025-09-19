@@ -130,8 +130,8 @@
           "$mainMod, V, togglefloating,"
           "$mainMod, space, exec, rofi -show drun"
           "$mainMod, P, pseudo,"
-          "$mainMod, F, exec, firefox"
-          # "$mainMod, F, fullscreen,"
+          "$mainMod, D, exec, firefox"
+          "$mainMod, F, fullscreen,"
           "SUPER, Escape, exec, wlogout"
           
           # Screenshot
