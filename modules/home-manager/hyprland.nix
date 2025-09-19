@@ -1,4 +1,7 @@
 { config, lib, pkgs, inputs, ... }:
+let
+  hostname = config.networking.hostName or "unknown";
+in
 {
   options = {
     home-manager.hyprland.enable = lib.mkEnableOption "Enable Hyprland with necessary packages and configurations";
@@ -11,9 +14,19 @@
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       
       settings = {
-        # Monitor configuration
-        monitor = [
-          "eDP-1,2880x1800@90,0x0,2"
+        # Monitor configuration - Host specific
+        monitor = if hostname == "desktop-lenovo" then [
+          # Desktop setup with external 144Hz monitor
+          "DP-1,1920x1080@144,0x0,1"              # Primary 144Hz monitor
+          # "HDMI-A-1,1920x1080@60,2560x0,1"       # Secondary monitor (if available)
+          ",preferred,auto,auto"                   # Auto-configure other monitors
+        ] else if hostname == "laptop-asus" then [
+          # Laptop setup
+          "eDP-1,2880x1800@90,0x0,2"             # Built-in laptop display
+          # "HDMI-A-1,1920x1080@144,2880x0,1"      # External 144Hz monitor when connected
+          ",preferred,auto,auto"                   # Auto-configure other monitors
+        ] else [
+          # Fallback for unknown hosts
           ",preferred,auto,auto"
         ];
 
@@ -193,6 +206,10 @@
           # Brightness keys
           ",XF86MonBrightnessUp, exec, brightnessctl s +5%"
           ",XF86MonBrightnessDown, exec, brightnessctl s 5%-"
+          
+          # Night mode toggle
+          "$mainMod, N, exec, pkill gammastep || gammastep -O 4000"
+          "$mainMod SHIFT, N, exec, pkill gammastep"
         ];
 
         # Mouse bindings
@@ -248,6 +265,9 @@
       
       # Color picker
       hyprpicker
+      
+      # Night mode / Blue light filter
+      gammastep
       
       # System monitor
       btop
@@ -492,6 +512,25 @@
       enable = true;
       components = [ "pkcs11" "secrets" "ssh" ];
     };
+
+    # Configure gammastep for automatic night mode
+    # services.gammastep = {
+    #   enable = true;
+      # provider = "manual";
+      # latitude = 45.0; # Adjust to your location
+      # longitude = 9.0; # Adjust to your location
+      # settings = {
+      #   general = {
+      #     temp-day = 6500;
+      #     temp-night = 4000;
+      #     brightness-day = 1.0;
+      #     brightness-night = 0.8;
+      #     gamma = 1.0;
+      #     adjustment-method = "wayland";
+      #     fade = 1;
+      #   };
+      # };
+    # };
 
     # Auto-start applications
     wayland.windowManager.hyprland.settings.exec-once = [
