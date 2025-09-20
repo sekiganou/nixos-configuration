@@ -3,12 +3,12 @@
 {
   config = lib.mkIf config.home-manager.hyprland.enable {
     # Set kitty as default terminal using dconf
-    dconf.settings = {
-      "org/gnome/desktop/default-applications/terminal" = {
-        exec = "kitty";
-        exec-arg = "-e";
-      };
-    };
+    # dconf.settings = {
+    #   "org/gnome/desktop/default-applications/terminal" = {
+    #     exec = "kitty";
+    #     exec-arg = "-e";
+    #   };
+    # };
 
     wayland.windowManager.hyprland.settings = {
       # Auto-start applications
