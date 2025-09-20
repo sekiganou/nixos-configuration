@@ -23,6 +23,7 @@
       
       # Status bar
       waybar
+      python3Packages.pywal
       
       # Notification daemon
       dunst
