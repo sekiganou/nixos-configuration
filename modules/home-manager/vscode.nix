@@ -19,6 +19,7 @@
           ms-vscode.makefile-tools
           ms-azuretools.vscode-containers
           prisma.prisma
+          vscjava.vscode-java-pack
       ];
 
     };
