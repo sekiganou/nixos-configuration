@@ -19,7 +19,15 @@
           ms-vscode.makefile-tools
           ms-azuretools.vscode-containers
           prisma.prisma
-          vscjava.vscode-java-pack
+          # vscjava.vscode-java-pack
+
+          vscjava.vscode-java-debug
+          redhat.java
+          vscjava.vscode-java-test
+          vscjava.vscode-maven
+          vscjava.vscode-gradle
+          vscjava.vscode-java-dependency
+          visualstudioexptteam.vscodeintellicode
       ];
 
     };
