@@ -17,6 +17,7 @@
         "$mainMod, space, exec, rofi -show drun"
         "$mainMod, P, pseudo,"
         "$mainMod, F, exec, firefox"
+        "$mainMod, N, exec, code ~/nixos-configuration"
         # "$mainMod, F, fullscreen,"
         "SUPER, Escape, exec, wlogout"
         "CTRL SHIFT, Escape, exec, kitty --hold btop"
@@ -88,8 +89,8 @@
         ",XF86MonBrightnessDown, exec, brightnessctl s 5%-"
         
         # Night mode toggle
-        "$mainMod, N, exec, pkill gammastep || gammastep -O 4000"
-        "$mainMod SHIFT, N, exec, pkill gammastep"
+        # "$mainMod, N, exec, pkill gammastep || gammastep -O 4000"
+        # "$mainMod SHIFT, N, exec, pkill gammastep"
       ];
 
       # Mouse bindings
