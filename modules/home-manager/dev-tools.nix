@@ -17,20 +17,20 @@
       timer
     ];
 
-    # programs.git = {
-    #   enable = true;
-    #   userName = "TEST";
-    #   userEmail = "alessiobagno@gmail.com";
-    # };
-
-    programs.bash = {
+    programs.git = {
       enable = true;
-      bashrcExtra = ''
-        # Custom aliases for development
-        alias ll='ls -la'
-        alias la='ls -A'
-        alias l='ls -CF'
-      '';
+      userName = "Alessio Bagno";
+      userEmail = "alessiobagno@gmail.com";
     };
+
+    # programs.bash = {
+    #   enable = true;
+    #   bashrcExtra = ''
+    #     # Custom aliases for development
+    #     alias ll='ls -la'
+    #     alias la='ls -A'
+    #     alias l='ls -CF'
+    #   '';
+    # };
   };
 }

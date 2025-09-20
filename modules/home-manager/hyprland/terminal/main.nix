@@ -19,5 +19,30 @@
         confirm_os_window_close = 0;
       };
     };
+
+    programs.zsh = {
+      enable = true;
+      enableCompletion = true;
+      syntaxHighlighting.enable = true;
+
+      oh-my-zsh = {
+        enable = true;
+        theme = "agnoster"; # pick your theme
+        plugins = [ "git" "z" "sudo" ];
+      };
+
+      shellAliases = {
+        ll = "ls -lah";
+        la = "ls -A";
+        l = "ls -CF";
+      };
+    };
+    
+    home.packages = with pkgs; [
+      kitty
+      zsh
+      zsh-autosuggestions
+    ];
+
   };
 }

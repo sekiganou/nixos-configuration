@@ -5,14 +5,19 @@
     # Essential packages for Hyprland
     home.packages = with pkgs; [
       # Terminal
-      kitty
+      #kitty
       
       # Application launcher
       rofi
 
       # File manager
-      nautilus
-      lf
+      #nautilus
+      #lf
+      nemo
+      gvfs
+      lxappearance
+      adwaita-icon-theme
+      papirus-icon-theme
       
       # Status bar
       waybar
@@ -62,6 +67,7 @@
       libsecret
       
       wlogout
+
     ];
   };
 }

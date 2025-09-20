@@ -12,7 +12,7 @@
         "$mainMod, C, exec, kitty --hold bash -c 'neofetch'"
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
-        "$mainMod, E, exec, kitty -e lf"
+        "$mainMod, E, exec, nemo"
         "$mainMod, V, togglefloating,"
         "$mainMod, space, exec, rofi -show drun"
         "$mainMod, P, pseudo,"
