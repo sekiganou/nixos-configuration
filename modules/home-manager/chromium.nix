@@ -53,6 +53,15 @@
         startupNotify = true;
       };
 
+      vikunja = {
+        name = "Vikunja";
+        comment = "Vikunja web app";
+        exec = "${pkgs.chromium}/bin/chromium --app=https://vikunja.dojo-vernier.ts.net";
+        icon = "vikunja";
+        categories = [ "Network" "Office" ];
+        startupNotify = true;
+      };
+
       # nextcloud = {
       #   name = "Nextcloud";
       #   comment = "Nextcloud web app";
