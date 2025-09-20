@@ -27,7 +27,7 @@
 
       oh-my-zsh = {
         enable = true;
-        theme = "agnoster"; # pick your theme
+        theme = "robbyrussell"; # pick your theme
         plugins = [ "git" "z" "sudo" ];
       };
 
@@ -37,12 +37,5 @@
         l = "ls -CF";
       };
     };
-    
-    home.packages = with pkgs; [
-      kitty
-      zsh
-      zsh-autosuggestions
-    ];
-
   };
 }

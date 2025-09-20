@@ -5,7 +5,9 @@
     # Essential packages for Hyprland
     home.packages = with pkgs; [
       # Terminal
-      #kitty
+      kitty
+      zsh
+      zsh-autosuggestions
       
       # Application launcher
       rofi
