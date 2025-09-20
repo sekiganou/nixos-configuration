@@ -19,6 +19,7 @@
         "$mainMod, F, exec, firefox"
         # "$mainMod, F, fullscreen,"
         "SUPER, Escape, exec, wlogout"
+        "CTRL SHIFT, Escape, exec, kitty --hold btop"
         
         # Screenshot
         "$mainMod, S, exec, grim -g \"$(slurp)\" - | wl-copy"
