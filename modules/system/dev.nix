@@ -11,6 +11,7 @@
       git
       gnumake
       jetbrains.idea-ultimate
+      openjdk
     ];
     
     programs.firefox.enable = true;
