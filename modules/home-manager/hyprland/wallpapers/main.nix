@@ -16,7 +16,7 @@
         ];
         
         wallpaper = [
-          "/home/alessio/Pictures/Wallpapers/hyprland.jpg"
+          "DP-1,/home/alessio/Pictures/Wallpapers/hyprland.jpg"
           # ",${pkgs.nixos-artwork.wallpapers.nineish-dark-gray}/share/backgrounds/nixos/nix-wallpaper-nineish-dark-gray.png"
         ];
       };
