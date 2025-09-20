@@ -12,7 +12,19 @@
       Name=Open in Terminal
       Comment=Open folder in Kitty terminal
       Exec=kitty --working-directory %F
-      Icon-Name=shell
+      Icon-Name=utilities-terminal
+      Selection=s
+      Extensions=dir;
+      Quote=double
+      EscapeSpaces=true
+    '';
+
+    xdg.dataFile."nemo/actions/open_in_code.nemo_action".text = ''
+      [Nemo Action]
+      Name=Open in VS Code
+      Comment=Open folder in Visual Studio Code
+      Exec=code %F
+      Icon-Name=text-editor
       Selection=s
       Extensions=dir;
       Quote=double
