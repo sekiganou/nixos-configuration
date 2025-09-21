@@ -16,7 +16,7 @@
           ms-vscode-remote.remote-ssh
           jnoortheen.nix-ide
           github.copilot
-          github.copilot-chat
+          # github.copilot-chat
           ms-vscode.makefile-tools
           ms-azuretools.vscode-containers
           prisma.prisma
@@ -29,12 +29,16 @@
           vscjava.vscode-java-dependency
           visualstudioexptteam.vscodeintellicode
           esbenp.prettier-vscode
+          nonylene.dark-molokai-theme
+          catppuccin.catppuccin-vsc
+          dracula-theme.theme-dracula
       ];
 
       userSettings = {
         "extensions.autoCheckUpdates" = false;
         "extensions.autoUpdate" = false;
         "extensions.ignoreRecommendations" = true;
+        "workbench.colorTheme" = "Dracula Theme";
       };
 
 
