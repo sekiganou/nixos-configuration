@@ -7,6 +7,7 @@
   config = lib.mkIf config.home-manager.vscode.enable {
     programs.vscode = {
       enable = true;
+      mutableExtensionsDir = false;
       profiles.default.extensions = with pkgs.vscode-extensions; [
           mhutchie.git-graph
           bbenoist.nix
@@ -29,6 +30,13 @@
           visualstudioexptteam.vscodeintellicode
           esbenp.prettier-vscode
       ];
+
+      userSettings = {
+        "extensions.autoCheckUpdates" = false;
+        "extensions.autoUpdate" = false;
+        "extensions.ignoreRecommendations" = true;
+      };
+
 
     };
 
