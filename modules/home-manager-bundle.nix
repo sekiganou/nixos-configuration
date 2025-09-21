@@ -5,6 +5,7 @@
     ./home-manager/dev-tools.nix
     ./home-manager/chromium.nix
     ./home-manager/nemo.nix
+    ./home-manager/discord.nix
   ];
 
   # Set default values for home-manager modules
@@ -13,6 +14,7 @@
   home-manager.dev-tools.enable = lib.mkDefault true;
   home-manager.chromium.enable = lib.mkDefault true;
   home-manager.nemo.enable = lib.mkDefault true;
+  home-manager.discord.enable = lib.mkDefault true;
 
   nixpkgs = {
     config.allowUnfree = true;

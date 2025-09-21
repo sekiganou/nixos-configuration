@@ -27,6 +27,7 @@
           vscjava.vscode-gradle
           vscjava.vscode-java-dependency
           visualstudioexptteam.vscodeintellicode
+          esbenp.prettier-vscode
       ];
 
     };
