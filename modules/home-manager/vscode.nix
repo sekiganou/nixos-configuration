@@ -32,13 +32,27 @@
           nonylene.dark-molokai-theme
           catppuccin.catppuccin-vsc
           dracula-theme.theme-dracula
+      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        {
+          name = "theme-monokai-pro-vscode";
+          publisher = "monokai";
+          version = "2.0.7";
+          sha256 = "sha256-MRFOtadoHlUbyRqm5xYmhuw0LL0qc++gR8g0HWnJJRE=";
+        }
+        # {
+        #   name = "copilot-chat";
+        #   publisher = "GitHub";
+        #   version = "0.32.2025091902";
+        #   sha256 = "sha256-ApUDvN1yYX3urdFFj4w4H1Jj4bIUFhmx3pi4ecRTLJ4=";
+        # }
       ];
 
       userSettings = {
         "extensions.autoCheckUpdates" = false;
         "extensions.autoUpdate" = false;
         "extensions.ignoreRecommendations" = true;
-        "workbench.colorTheme" = "Dracula Theme";
+        "workbench.colorTheme" = "Monokai Pro (Filter Octagon)";
+        "workbench.iconTheme" = "Monokai Pro (Filter Octagon) Icons";
       };
 
 
