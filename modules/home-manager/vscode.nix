@@ -1,5 +1,9 @@
-{ config, lib, pkgs, ... }:
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   options = {
     home-manager.vscode.enable = lib.mkEnableOption "Enable VSCode with extensions";
   };
@@ -8,7 +12,8 @@
     programs.vscode = {
       enable = true;
       mutableExtensionsDir = false;
-      profiles.default.extensions = with pkgs.vscode-extensions; [
+      profiles.default.extensions = with pkgs.vscode-extensions;
+        [
           mhutchie.git-graph
           bbenoist.nix
           ms-python.python
@@ -33,20 +38,22 @@
           catppuccin.catppuccin-vsc
           dracula-theme.theme-dracula
           tomoki1207.pdf
-      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "theme-monokai-pro-vscode";
-          publisher = "monokai";
-          version = "2.0.7";
-          sha256 = "sha256-MRFOtadoHlUbyRqm5xYmhuw0LL0qc++gR8g0HWnJJRE=";
-        }
-        # {
-        #   name = "copilot-chat";
-        #   publisher = "GitHub";
-        #   version = "0.32.2025091902";
-        #   sha256 = "sha256-ApUDvN1yYX3urdFFj4w4H1Jj4bIUFhmx3pi4ecRTLJ4=";
-        # }
-      ];
+          kamadorueda.alejandra
+        ]
+        ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+          {
+            name = "theme-monokai-pro-vscode";
+            publisher = "monokai";
+            version = "2.0.7";
+            sha256 = "sha256-MRFOtadoHlUbyRqm5xYmhuw0LL0qc++gR8g0HWnJJRE=";
+          }
+          # {
+          #   name = "copilot-chat";
+          #   publisher = "GitHub";
+          #   version = "0.32.2025091902";
+          #   sha256 = "sha256-ApUDvN1yYX3urdFFj4w4H1Jj4bIUFhmx3pi4ecRTLJ4=";
+          # }
+        ];
 
       userSettings = {
         "extensions.autoCheckUpdates" = false;
@@ -54,10 +61,17 @@
         "extensions.ignoreRecommendations" = true;
         "workbench.colorTheme" = "Monokai Pro (Filter Octagon)";
         "workbench.iconTheme" = "Monokai Pro (Filter Octagon) Icons";
+        "[nix]" = {
+          "editor.defaultFormatter" = "kamadorueda.alejandra";
+        };
+        "editor.formatOnSave" = true;
+        "editor.formatOnPaste" = true;
+        "editor.formatOnType" = true;
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "[java]" = {
+          "editor.defaultFormatter" = "redhat.java";
+        };
       };
-
-
     };
-
   };
 }

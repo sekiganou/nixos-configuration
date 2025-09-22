@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   options = {
     home-manager.dev-tools.enable = lib.mkEnableOption "Enable development tools";
   };

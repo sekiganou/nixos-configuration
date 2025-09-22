@@ -1,6 +1,9 @@
-{ config, pkgs, lib, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   options = {
     home-manager.obsidian.enable = lib.mkEnableOption "Enable Obsidian";
   };

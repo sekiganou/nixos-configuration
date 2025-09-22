@@ -1,6 +1,10 @@
-{ config, lib, pkgs, inputs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: {
   config = lib.mkIf config.home-manager.hyprland.enable {
     wayland.windowManager.hyprland.settings = {
       # Monitor configuration - Set per host in configuration.nix
@@ -33,7 +37,7 @@
         kb_layout = config.home-manager.hyprland.kb_layout;
         follow_mouse = 1;
         sensitivity = 0;
-        
+
         touchpad = {
           natural_scroll = true;
           disable_while_typing = true;
@@ -59,12 +63,12 @@
         rounding = 10;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
-        
+
         # drop_shadow = true;
         # shadow_range = 4;
         # shadow_render_power = 3;
         # "col.shadow" = "rgba(1a1a1aee)";
-        
+
         blur = {
           enabled = true;
           size = 3;

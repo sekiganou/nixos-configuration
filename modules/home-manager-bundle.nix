@@ -1,4 +1,8 @@
-{ pkgs, lib, ... }: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     ./home-manager/vscode.nix
     ./home-manager/hyprland/main.nix

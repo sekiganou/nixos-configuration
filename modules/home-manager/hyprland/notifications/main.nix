@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   config = lib.mkIf config.home-manager.hyprland.enable {
     # Configure dunst for notifications
     services.dunst = {
@@ -15,7 +18,7 @@
           frame_color = "#eceff1";
           font = "Droid Sans 9";
         };
-        
+
         urgency_normal = {
           background = "#37474f";
           foreground = "#eceff1";

@@ -1,5 +1,10 @@
-{ config, lib, pkgs, inputs, ... }:
 {
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: {
   options = {
     system.hyprland.enable = lib.mkEnableOption "Enable Hyprland system configuration";
   };
@@ -13,10 +18,10 @@
 
     # Enable GNOME Keyring for password storage
     services.gnome.gnome-keyring.enable = true;
-    
+
     # Enable D-Bus for proper service communication
     services.dbus.enable = true;
-    
+
     # Enable PAM support for gnome-keyring
     security.pam.services.login.enableGnomeKeyring = true;
     security.pam.services.passwd.enableGnomeKeyring = true;
@@ -24,15 +29,15 @@
     # System packages that need to be available system-wide
     environment.systemPackages = with pkgs; [
       # Essential system utilities
-      brightnessctl   # Brightness control (needs system access)
-      pamixer         # Audio control
-      gnome-keyring   # Keyring for storing passwords
+      brightnessctl # Brightness control (needs system access)
+      pamixer # Audio control
+      gnome-keyring # Keyring for storing passwords
     ];
 
     # Enable XDG desktop portal
     xdg.portal = {
       enable = true;
-      extraPortals = [ 
+      extraPortals = [
         pkgs.xdg-desktop-portal-gtk
         inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
       ];
@@ -40,18 +45,20 @@
 
     # Enable polkit for privilege escalation
     security.polkit.enable = true;
-    
+
     # Enable fonts
-    fonts.packages = with pkgs; [
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-emoji
-      liberation_ttf
-      fira-code
-      fira-code-symbols
-      font-awesome
-      # (nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" "DroidSansMono" ]; })
-    ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+    fonts.packages = with pkgs;
+      [
+        noto-fonts
+        noto-fonts-cjk-sans
+        noto-fonts-emoji
+        liberation_ttf
+        fira-code
+        fira-code-symbols
+        font-awesome
+        # (nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" "DroidSansMono" ]; })
+      ]
+      ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
     nix.settings = {
       substituters = ["https://hyprland.cachix.org"];

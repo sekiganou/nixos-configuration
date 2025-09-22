@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   options = {
     home-manager.nemo.enable = lib.mkEnableOption "Nemo file manager configuration";
   };

@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   config = lib.mkIf config.home-manager.hyprland.enable {
     # Set kitty as default terminal using dconf
     # dconf.settings = {
@@ -29,7 +32,7 @@
     # Enable GNOME Keyring for password storage
     services.gnome-keyring = {
       enable = true;
-      components = [ "pkcs11" "secrets" "ssh" ];
+      components = ["pkcs11" "secrets" "ssh"];
     };
   };
 }

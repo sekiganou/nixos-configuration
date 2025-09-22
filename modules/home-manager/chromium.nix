@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   options = {
     home-manager.chromium.enable = lib.mkEnableOption "Enable Chromium";
   };
@@ -8,13 +11,13 @@
   config = lib.mkIf config.home-manager.chromium.enable {
     programs.chromium = {
       enable = true;
-      
+
       # Optional: Configure extensions
       # extensions = [
       #   { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # uBlock Origin
       #   { id = "nngceckbapebfimnlniiiahkandclblb"; } # Bitwarden
       # ];
-      
+
       # Optional: Set command line arguments
       # commandLineArgs = [
       #   "--enable-features=VaapiVideoDecoder"
@@ -31,7 +34,7 @@
         comment = "Gmail web app";
         exec = "${pkgs.chromium}/bin/chromium --app=https://mail.google.com";
         icon = "mail-mark-important";
-        categories = [ "Network" "Email" ];
+        categories = ["Network" "Email"];
         startupNotify = true;
       };
 
@@ -40,7 +43,7 @@
         comment = "YouTube web app";
         exec = "${pkgs.chromium}/bin/chromium --app=https://www.youtube.com";
         icon = "youtube";
-        categories = [ "Network" "Video" ];
+        categories = ["Network" "Video"];
         startupNotify = true;
       };
 
@@ -49,7 +52,7 @@
         comment = "Jellyfin web app";
         exec = "${pkgs.chromium}/bin/chromium --app=https://jellyfin.dojo-vernier.ts.net";
         icon = "jellyfin";
-        categories = [ "Network" "Video" ];
+        categories = ["Network" "Video"];
         startupNotify = true;
       };
 
@@ -58,7 +61,7 @@
         comment = "Vikunja web app";
         exec = "${pkgs.chromium}/bin/chromium --app=https://vikunja.dojo-vernier.ts.net";
         icon = "vikunja";
-        categories = [ "Network" "Office" ];
+        categories = ["Network" "Office"];
         startupNotify = true;
       };
 

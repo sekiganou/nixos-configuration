@@ -1,6 +1,9 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "alessio";
@@ -73,13 +76,13 @@
   };
 
   imports = [
-	../../modules/home-manager-bundle.nix
+    ../../modules/home-manager-bundle.nix
   ];
 
   home-manager.hyprland.monitors = [
-   "DP-1,1920x1080@143.85,0x0,1"        # MSI G24C4 144Hz monitor
+    "DP-1,1920x1080@143.85,0x0,1" # MSI G24C4 144Hz monitor
     # "HDMI-A-1,1920x1080@60,1920x0,1"   # Secondary monitor (uncomment if needed)
-    ",preferred,auto,auto"                 # Auto-configure other monitors
+    ",preferred,auto,auto" # Auto-configure other monitors
   ];
 
   home-manager.hyprland.kb_layout = "us";

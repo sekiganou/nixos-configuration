@@ -1,6 +1,9 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "alessio";
@@ -73,13 +76,13 @@
   };
 
   imports = [
-	../../modules/home-manager-bundle.nix
+    ../../modules/home-manager-bundle.nix
   ];
 
   home-manager.hyprland.monitors = [
-        "eDP-1,2880x1800@90,0x0,2"           # Built-in laptop display with 2x scaling
-        "HDMI-A-1,1920x1080@143.85,2880x0,1" # External 144Hz monitor when connected
-        ",preferred,auto,auto"                 # Auto-configure other monitors
+    "eDP-1,2880x1800@90,0x0,2" # Built-in laptop display with 2x scaling
+    "HDMI-A-1,1920x1080@143.85,2880x0,1" # External 144Hz monitor when connected
+    ",preferred,auto,auto" # Auto-configure other monitors
   ];
 
   home-manager.hyprland.kb_layout = "it";
