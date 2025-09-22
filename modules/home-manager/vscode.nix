@@ -32,6 +32,7 @@
           nonylene.dark-molokai-theme
           catppuccin.catppuccin-vsc
           dracula-theme.theme-dracula
+          tomoki1207.pdf
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "theme-monokai-pro-vscode";
