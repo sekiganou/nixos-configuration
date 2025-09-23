@@ -65,6 +65,15 @@
         startupNotify = true;
       };
 
+      duelvault = {
+        name = "DuelVault";
+        comment = "DuelVault web app";
+        exec = "${pkgs.chromium}/bin/chromium --app=https://duelvault.dojo-vernier.ts.net";
+        icon = "duelvault";
+        categories = ["Network" "Office"];
+        startupNotify = true;
+      };
+
       # nextcloud = {
       #   name = "Nextcloud";
       #   comment = "Nextcloud web app";
