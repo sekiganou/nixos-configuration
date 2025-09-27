@@ -71,6 +71,7 @@
         "[java]" = {
           "editor.defaultFormatter" = "redhat.java";
         };
+        "git.confirmSync" = false;
       };
     };
   };
