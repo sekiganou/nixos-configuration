@@ -13,6 +13,9 @@
     ./home-manager/feishin.nix
     ./home-manager/obsidian.nix
   ];
+  home.packages = [
+    pkgs.jellyflix
+  ];
 
   # Set default values for home-manager modules
   home-manager.vscode.enable = lib.mkDefault true;

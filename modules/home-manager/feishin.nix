@@ -9,6 +9,8 @@
   };
 
   config = lib.mkIf config.home-manager.feishin.enable {
-    home.packages = [pkgs.feishin];
+    home.packages = [
+      pkgs.feishin
+    ];
   };
 }

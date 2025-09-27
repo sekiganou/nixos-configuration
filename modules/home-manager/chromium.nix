@@ -47,14 +47,14 @@
         startupNotify = true;
       };
 
-      jellyfin = {
-        name = "Jellyfin";
-        comment = "Jellyfin web app";
-        exec = "${pkgs.chromium}/bin/chromium --app=https://jellyfin.dojo-vernier.ts.net";
-        icon = "jellyfin";
-        categories = ["Network" "Video"];
-        startupNotify = true;
-      };
+      # jellyfin = {
+      #   name = "Jellyfin";
+      #   comment = "Jellyfin web app";
+      #   exec = "${pkgs.chromium}/bin/chromium --app=https://jellyfin.dojo-vernier.ts.net";
+      #   icon = "jellyfin";
+      #   categories = ["Network" "Video"];
+      #   startupNotify = true;
+      # };
 
       vikunja = {
         name = "Vikunja";
