@@ -74,6 +74,33 @@
         startupNotify = true;
       };
 
+      tailscale = {
+        name = "Tailscale";
+        comment = "Tailscale web app";
+        exec = "${pkgs.chromium}/bin/chromium --app=https://login.tailscale.com";
+        icon = "tailscale";
+        categories = ["Network" "Office"];
+        startupNotify = true;
+      };
+
+      tailscale-interface = {
+        name = "Tailscale Interface";
+        comment = "Tailscale web app";
+        exec = "${pkgs.chromium}/bin/chromium --app=http://100.100.100.100";
+        icon = "tailscale";
+        categories = ["Network" "Office"];
+        startupNotify = true;
+      };
+
+      rsi = {
+        name = "RSI";
+        comment = "RSI web app";
+        exec = "${pkgs.chromium}/bin/chromium --app=https://www.rsi.ch";
+        icon = "rsi";
+        categories = ["Network" "Video"];
+        startupNotify = true;
+      };
+
       # nextcloud = {
       #   name = "Nextcloud";
       #   comment = "Nextcloud web app";
