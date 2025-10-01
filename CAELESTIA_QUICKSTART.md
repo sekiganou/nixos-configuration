@@ -4,44 +4,84 @@
 
 Your Hyprland setup now uses the **Caelestia theme** - a Material Design 3-based theme with purple/blue colors. All your apps (Firefox, VSCode, etc.) remain unchanged.
 
-## 🔑 New Keybindings (Super = Windows Key)
+## 🔑 Keybindings (ALT as Main Modifier)
+
+**Note:** This configuration uses **ALT** as the main modifier (your preference) instead of Super, while integrating additional Caelestia features.
 
 ### Applications
-- `Super + T` - Terminal (Foot)
-- `Super + W` - Browser (Firefox)
-- `Super + C` - Editor (VSCode)
-- `Super + E` - File Manager (Nemo)
-- `Super + Space` or `Super + R` - Launcher (Fuzzel)
+- `Alt + T` - Terminal (Foot)
+- `Alt + W` or `Alt + F` - Browser (Firefox)
+- `Alt + C` - Editor (VSCode)
+- `Alt + E` - File Manager (Nemo)
+- `Alt + N` - Open nixos-configuration in VSCode
+- `Alt + Space` - Launcher (Fuzzel)
 
 ### Window Management
-- `Super + Q` - Close window
-- `Super + V` - Toggle floating
-- `Super + F` - Fullscreen
-- `Super + P` - Pin window
-- `Super + [1-9]` - Switch to workspace
-- `Super + Alt + [1-9]` - Move window to workspace
-- `Ctrl + Super + Left/Right` - Navigate workspaces
+- `Alt + Q` - Close window
+- `Alt + V` - Toggle floating
+- `Alt + Shift + F` - Fullscreen with borders
+- `Alt + Ctrl + P` - Pin window
+- `Alt + U` - Toggle window group
+- `Alt + Comma` - Change active in group
+- `Alt + Ctrl + U` - Ungroup window
+- `Alt + Ctrl + C` - Center window
+- `Alt + [1-9]` - Switch to workspace
+- `Alt + Shift + [1-9]` - Move window to workspace
+- `Alt + Ctrl + Left/Right` - Navigate workspaces
+- `Alt + Page Up/Down` - Navigate workspaces (alternative)
+
+### Window Groups (New Caelestia Feature)
+- `Alt + Tab` - Cycle forward in group
+- `Shift + Alt + Tab` - Cycle backward in group
+- `Ctrl + Alt + Tab` - Cycle to next window
+- `Alt + Shift + Comma` - Lock/unlock group
 
 ### Utilities
-- `Print` - Screenshot (with annotation)
-- `Super + Shift + C` - Color picker
-- `Super + Period` - Clipboard history
-- `Alt + Tab` - Cycle through windows/groups
+- `Print` - Full screen to clipboard
+- `Alt + S` or `Shift + Print` - Region screenshot to clipboard
+- `Ctrl + Print` - Full screen with annotation (Swappy)
+- `Alt + Shift + C` - Color picker
+- `Alt + Shift + V` or `Super + Period` - Clipboard history
 - `Ctrl + Alt + Delete` - Session menu
-- `Ctrl + Shift + Escape` - System monitor
+- `Ctrl + Shift + Escape` - System monitor (btop)
 
-### Movement & Resize
-- `Super + Z` - Enter move mode (then use h/j/k/l)
-- `Super + X` - Enter resize mode (then use h/j/k/l)
-- Press `Escape` to exit mode
+### Movement & Resize (Enhanced)
+- `Alt + Z` - Enter move mode (then use h/j/k/l or arrow keys, Escape/Enter to exit)
+- `Alt + X` - Enter resize mode (then use h/j/k/l or arrow keys, Escape/Enter to exit)
+- `Alt + Ctrl + Equal` - Increase split ratio
+- `Alt + Ctrl + Minus` - Decrease split ratio
+- `Alt + h/j/k/l` or `Arrow keys` - Move focus
+- `Alt + Shift + h/j/k/l` or `Shift + Arrow keys` - Move window
+
+### Advanced Workspace Control (New)
+- `Alt + Ctrl + Shift + Left/Right` - Move window to adjacent workspace
+- `Alt + Shift + Page Up/Down` - Move window to adjacent workspace
+- `Alt + Ctrl + Shift + Up` - Move window to special workspace
+- `Alt + Ctrl + Shift + Down` - Move window from special to current
+- `Alt + Grave` or `Alt + S` - Toggle special workspace
+
+### Media Controls
+- `XF86AudioPlay/Pause` - Play/Pause
+- `XF86AudioNext/Prev` - Next/Previous track
+- `XF86AudioMute` - Mute toggle
+- `Alt + Shift + M` - Mute toggle (alternative)
+- `Ctrl + Super + Space` - Play/Pause (Caelestia binding)
+- `XF86MonBrightnessUp/Down` - Brightness control
+
+### System
+- `Alt + Shift + L` or `Super + Shift + L` - Suspend then hibernate
+- `Super + Escape` - Session menu (wlogout)
 
 ## 🆕 New Features
 
 ### 1. Clipboard History
-Copy things, then press `Super + Period` to search through your clipboard history.
+Copy things, then press `Alt + Shift + V` or `Super + Period` to search through your clipboard history.
 
 ### 2. Screenshot Annotation
-Press `Print` to take a screenshot - it opens in Swappy where you can annotate before saving.
+- `Print` - Full screen to clipboard
+- `Ctrl + Print` - Full screen with annotation
+- `Alt + S` - Region screenshot to clipboard  
+- Press `Alt + S` and select area to capture with Swappy annotation tool
 
 ### 3. Modern Terminal
 - Type `ls` or `ll` - see files with icons and colors (using eza)
