@@ -6,27 +6,50 @@
 }: {
   config = lib.mkIf config.home-manager.hyprland.enable {
     wayland.windowManager.hyprland.settings = {
-      # Main modifier key
-      "$mainMod" = "ALT";
+      # Main modifier key - Caelestia uses Super (Windows key)
+      "$mainMod" = "SUPER";
 
-      # Keybindings
+      # Keybindings - Caelestia style
       bind = [
-        # Application shortcuts
-        "$mainMod, C, exec, kitty --hold bash -c 'neofetch'"
+        # Application shortcuts (keeping your existing apps)
+        "$mainMod, T, exec, foot"  # Terminal - now using Foot
+        "$mainMod, W, exec, firefox"  # Browser
+        "$mainMod, C, exec, code"  # IDE/Editor
+        "$mainMod, E, exec, nemo"  # File manager
+        
+        # Window management
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
-        "$mainMod, E, exec, nemo"
         "$mainMod, V, togglefloating,"
-        "$mainMod, space, exec, rofi -show drun"
-        "$mainMod, P, pseudo,"
-        "$mainMod, F, exec, firefox"
-        "$mainMod, N, exec, code ~/nixos-configuration"
-        # "$mainMod, F, fullscreen,"
+        "$mainMod, F, fullscreen, 0"
+        "$mainMod ALT, F, fullscreen, 1"  # Bordered fullscreen
+        "$mainMod, P, pin,"  # Pin window
+        "$mainMod, U, togglegroup,"  # Ungroup/toggle group
+        "$mainMod, Comma, changegroupactive,"
+        
+        # Launcher - will use fuzzel
+        "$mainMod, space, exec, fuzzel"
+        "$mainMod, R, exec, fuzzel"  # Alternative launcher binding
+        
+        # Special/Scratchpad workspaces
+        "$mainMod, S, togglespecialworkspace, magic"
+        "$mainMod SHIFT, S, movetoworkspace, special:magic"
+        
+        # System shortcuts
         "SUPER, Escape, exec, wlogout"
-        "CTRL SHIFT, Escape, exec, kitty --hold btop"
+        "CTRL ALT, Delete, exec, wlogout"  # Session menu
+        "CTRL SHIFT, Escape, exec, foot btop"  # System monitor
 
         # Screenshot
-        "$mainMod, S, exec, grim -g \"$(slurp)\" - | wl-copy"
+        ", Print, exec, grim -g \"$(slurp)\" - | swappy -f -"
+        "$mainMod SHIFT, S, exec, grim -g \"$(slurp)\" - | swappy -f -"
+        "CTRL, Print, exec, grim - | swappy -f -"  # Full screen
+        
+        # Color picker
+        "$mainMod SHIFT, C, exec, hyprpicker -a"
+        
+        # Clipboard history
+        "$mainMod, Period, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
@@ -34,7 +57,7 @@
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
 
-        # Move focus with mainMod + hjkl
+        # Move focus with mainMod + hjkl (vim style)
         "$mainMod, h, movefocus, l"
         "$mainMod, l, movefocus, r"
         "$mainMod, k, movefocus, u"
@@ -45,6 +68,10 @@
         "$mainMod SHIFT, l, movewindow, r"
         "$mainMod SHIFT, k, movewindow, u"
         "$mainMod SHIFT, j, movewindow, d"
+
+        # Resize windows with mainMod + X + hjkl
+        "$mainMod, Z, submap, move"  # Move mode
+        "$mainMod, X, submap, resize"  # Resize mode
 
         # Switch workspaces with mainMod + [0-9]
         "$mainMod, 1, workspace, 1"
@@ -58,42 +85,64 @@
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
 
-        # Move active window to workspace
-        "$mainMod SHIFT, 1, movetoworkspace, 1"
-        "$mainMod SHIFT, 2, movetoworkspace, 2"
-        "$mainMod SHIFT, 3, movetoworkspace, 3"
-        "$mainMod SHIFT, 4, movetoworkspace, 4"
-        "$mainMod SHIFT, 5, movetoworkspace, 5"
-        "$mainMod SHIFT, 6, movetoworkspace, 6"
-        "$mainMod SHIFT, 7, movetoworkspace, 7"
-        "$mainMod SHIFT, 8, movetoworkspace, 8"
-        "$mainMod SHIFT, 9, movetoworkspace, 9"
-        "$mainMod SHIFT, 0, movetoworkspace, 10"
+        # Move active window to workspace with mainMod + ALT + [0-9]
+        "$mainMod ALT, 1, movetoworkspace, 1"
+        "$mainMod ALT, 2, movetoworkspace, 2"
+        "$mainMod ALT, 3, movetoworkspace, 3"
+        "$mainMod ALT, 4, movetoworkspace, 4"
+        "$mainMod ALT, 5, movetoworkspace, 5"
+        "$mainMod ALT, 6, movetoworkspace, 6"
+        "$mainMod ALT, 7, movetoworkspace, 7"
+        "$mainMod ALT, 8, movetoworkspace, 8"
+        "$mainMod ALT, 9, movetoworkspace, 9"
+        "$mainMod ALT, 0, movetoworkspace, 10"
 
-        # Special workspace (scratchpad)
-        "$mainMod, grave, togglespecialworkspace, magic"
-        "$mainMod SHIFT, grave, movetoworkspace, special:magic"
+        # Navigate workspaces
+        "CTRL $mainMod, right, workspace, e+1"
+        "CTRL $mainMod, left, workspace, e-1"
 
-        # Scroll through existing workspaces with mainMod + scroll
-        "$mainMod, mouse_down, workspace, e+1"
-        "$mainMod, mouse_up, workspace, e-1"
+        # Window group cycling (like Alt+Tab)
+        "ALT, Tab, changegroupactive, f"
+        "SHIFT ALT, Tab, changegroupactive, b"
 
         # Media keys
-        ",XF86AudioRaiseVolume, exec, pamixer -i 5"
-        ",XF86AudioLowerVolume, exec, pamixer -d 5"
-        ",XF86AudioMute, exec, pamixer -t"
+        ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        "$mainMod SHIFT, M, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ",XF86AudioPlay, exec, playerctl play-pause"
         ",XF86AudioPause, exec, playerctl play-pause"
         ",XF86AudioNext, exec, playerctl next"
         ",XF86AudioPrev, exec, playerctl previous"
+        "CTRL $mainMod, Space, exec, playerctl play-pause"  # Toggle media
 
         # Brightness keys
         ",XF86MonBrightnessUp, exec, brightnessctl s +5%"
         ",XF86MonBrightnessDown, exec, brightnessctl s 5%-"
 
-        # Night mode toggle
-        # "$mainMod, N, exec, pkill gammastep || gammastep -O 4000"
-        # "$mainMod SHIFT, N, exec, pkill gammastep"
+        # Sleep/Lock
+        "$mainMod SHIFT, L, exec, systemctl suspend-then-hibernate"
+      ];
+
+      # Submaps for resize and move modes
+      submap = [
+        # Resize mode
+        "resize"
+        "binde=, h, resizeactive, -10 0"
+        "binde=, l, resizeactive, 10 0"
+        "binde=, k, resizeactive, 0 -10"
+        "binde=, j, resizeactive, 0 10"
+        "bind=, escape, submap, reset"
+        "submap=reset"
+        
+        # Move mode  
+        "move"
+        "binde=, h, moveactive, -10 0"
+        "binde=, l, moveactive, 10 0"
+        "binde=, k, moveactive, 0 -10"
+        "binde=, j, moveactive, 0 10"
+        "bind=, escape, submap, reset"
+        "submap=reset"
       ];
 
       # Mouse bindings
