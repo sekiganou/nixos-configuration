@@ -6,26 +6,29 @@
   ...
 }: {
   config = lib.mkIf config.home-manager.hyprland.enable {
-    # Essential packages for Hyprland
+    # Essential packages for Hyprland with Caelestia theme
     home.packages = with pkgs; [
-      # Terminal
+      # Terminal (Caelestia uses Foot, but we keep Kitty as backup)
+      foot
       kitty
-      zsh
-      zsh-autosuggestions
+      fish
+      starship
+      
+      # Application launcher (Caelestia uses Fuzzel instead of Rofi)
+      fuzzel
+      rofi  # Keep as backup
 
-      # Application launcher
-      rofi
-
-      # File manager
-      #nautilus
-      #lf
+      # File manager (keeping your choice)
       nemo
       gvfs
+      
+      # Appearance tools
       lxappearance
       adwaita-icon-theme
       papirus-icon-theme
 
-      # Status bar
+      # Status bar - We'll need to add Quickshell later
+      # For now, keep waybar as it's already configured
       waybar
 
       # Notification daemon
@@ -37,11 +40,16 @@
       # Audio control
       pavucontrol
       playerctl
+      wireplumber  # Caelestia dependency
 
-      # Screenshots
+      # Screenshots (Caelestia uses these)
       grim
       slurp
       wl-clipboard
+      swappy  # Screenshot editor
+
+      # Clipboard management (Caelestia uses cliphist)
+      cliphist
 
       # Network manager applet
       networkmanagerapplet
@@ -52,8 +60,9 @@
       # Color picker
       hyprpicker
 
-      # Night mode / Blue light filter
+      # Night mode / Blue light filter (Caelestia uses gammastep)
       gammastep
+      geoclue2  # Location provider for gammastep
 
       # System monitor
       btop
@@ -72,7 +81,19 @@
       polkit_gnome
       libsecret
 
+      # System utilities
       wlogout
+      trash-cli  # Caelestia uses trash-cli for safe file deletion
+      
+      # Shell utilities (Caelestia dependencies)
+      eza  # Modern ls replacement (aliased in fish config)
+      fastfetch  # System info (Caelestia uses this instead of neofetch)
+      jq  # JSON processor
+      inotify-tools  # File monitoring
+      
+      # Fonts (Caelestia requirements)
+      material-symbols  # Material Design icons
+      (nerdfonts.override { fonts = [ "JetBrainsMono" "CascadiaCode" ]; })
     ];
   };
 }

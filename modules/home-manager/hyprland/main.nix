@@ -7,10 +7,12 @@
 }: {
   imports = [
     ./apps.nix
+    ./base/colors.nix
     ./base/main.nix
     ./keybindings/main.nix
     ./autostart/main.nix
     ./terminal/main.nix
+    ./launcher/main.nix
     ./topbar/main.nix
     ./notifications/main.nix
     ./wallpapers/main.nix

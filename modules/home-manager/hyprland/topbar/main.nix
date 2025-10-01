@@ -5,14 +5,14 @@
   ...
 }: {
   config = lib.mkIf config.home-manager.hyprland.enable {
-    # Configure waybar
+    # Configure waybar - Styled for Caelestia theme
     programs.waybar = {
       enable = true;
       settings = {
         mainBar = {
           layer = "top";
           position = "top";
-          height = 30;
+          height = 35;
           output = ["*"];
 
           modules-left = ["hyprland/workspaces"];
@@ -22,11 +22,14 @@
           "hyprland/workspaces" = {
             disable-scroll = true;
             all-outputs = true;
+            format = "{name}";
+            on-click = "activate";
           };
 
           "hyprland/window" = {
             format = "{}";
             separate-outputs = true;
+            max-length = 50;
           };
 
           tray = {
@@ -34,22 +37,23 @@
           };
 
           clock = {
-            tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+            format = "{:%H:%M}";
             format-alt = "{:%Y-%m-%d}";
+            tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           };
 
           cpu = {
-            format = "{usage}% ";
+            format = " {usage}%";
             tooltip = false;
           };
 
           memory = {
-            format = "{}% ";
+            format = " {}%";
           };
 
           temperature = {
             critical-threshold = 80;
-            format = "{temperatureC}°C {icon}";
+            format = "{icon} {temperatureC}°C";
             format-icons = ["" "" ""];
           };
 
@@ -58,29 +62,27 @@
               warning = 30;
               critical = 15;
             };
-            format = "{capacity}% {icon}";
-            format-charging = "{capacity}% ";
-            format-plugged = "{capacity}% ";
+            format = "{icon} {capacity}%";
+            format-charging = " {capacity}%";
+            format-plugged = " {capacity}%";
             format-alt = "{time} {icon}";
             format-icons = ["" "" "" "" ""];
           };
 
           network = {
-            format-wifi = "{essid} ({signalStrength}%) ";
-            format-ethernet = "{ipaddr}/{cidr} ";
-            tooltip-format = "{ifname} via {gwaddr} ";
-            format-linked = "{ifname} (No IP) ";
-            format-disconnected = "Disconnected ⚠";
+            format-wifi = " {essid}";
+            format-ethernet = " {ipaddr}";
+            tooltip-format = "{ifname} via {gwaddr}";
+            format-linked = " {ifname}";
+            format-disconnected = "⚠ Disconnected";
             format-alt = "{ifname}: {ipaddr}/{cidr}";
           };
 
           pulseaudio = {
-            format = "{volume}% {icon} {format_source}";
-            format-bluetooth = "{volume}% {icon} {format_source}";
-            format-bluetooth-muted = " {icon} {format_source}";
-            format-muted = " {format_source}";
-            format-source = "{volume}% ";
-            format-source-muted = "";
+            format = "{icon} {volume}%";
+            format-bluetooth = " {icon} {volume}%";
+            format-bluetooth-muted = "  {icon}";
+            format-muted = "";
             format-icons = {
               headphone = "";
               hands-free = "";
