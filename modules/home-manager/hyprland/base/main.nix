@@ -51,8 +51,8 @@
         gaps_in = 10;
         gaps_out = 40;
         border_size = 3;
-        "col.active_border" = "rgba(c2c1ffe6)";  # Primary color with opacity
-        "col.inactive_border" = "rgba(47464f11)";  # Outline variant with low opacity
+        "col.active_border" = "rgba(c2c1ffe6)"; # Primary color with opacity
+        "col.inactive_border" = "rgba(47464f11)"; # Outline variant with low opacity
         resize_on_border = false;
         allow_tearing = false;
         layout = "dwindle";
@@ -60,20 +60,20 @@
 
       # Decoration settings - Caelestia style with Material Design 3 aesthetics
       decoration = {
-        rounding = 10;  # Caelestia uses 10px rounding
-        active_opacity = 0.95;  # Slight transparency for active windows
+        rounding = 10; # Caelestia uses 10px rounding
+        active_opacity = 0.95; # Slight transparency for active windows
         inactive_opacity = 0.95;
 
         # Shadows for depth
-        drop_shadow = true;
-        shadow_range = 20;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(131317d4)";  # Dark shadow based on background color
+        # drop_shadow = true;
+        # shadow_range = 20;
+        # shadow_render_power = 3;
+        # "col.shadow" = "rgba(131317d4)"; # Dark shadow based on background color
 
         blur = {
           enabled = true;
-          size = 8;  # Caelestia uses size 8
-          passes = 2;  # Caelestia uses 2 passes
+          size = 8; # Caelestia uses size 8
+          passes = 2; # Caelestia uses 2 passes
           vibrancy = 0.1696;
           ignore_opacity = true;
           new_optimizations = true;
@@ -125,7 +125,7 @@
         "col.border_inactive" = "rgba(47464f11)";
         "col.border_locked_active" = "rgba(c2c1ffe6)";
         "col.border_locked_inactive" = "rgba(47464f11)";
-        
+
         groupbar = {
           font_family = "JetBrains Mono Nerd Font";
           font_size = 10;
@@ -137,7 +137,7 @@
 
       # Misc settings - Caelestia configuration
       misc = {
-        force_default_wallpaper = 0;  # Disable Hyprland logo
+        force_default_wallpaper = 0; # Disable Hyprland logo
         disable_hyprland_logo = true;
         vfr = true;
         vrr = 1;
@@ -148,7 +148,7 @@
         focus_on_activate = true;
         mouse_move_enables_dpms = true;
         key_press_enables_dpms = true;
-        background_color = "rgb(201f23)";  # Surface container color
+        background_color = "rgb(201f23)"; # Surface container color
       };
 
       # Window rules - Caelestia style
@@ -173,8 +173,8 @@
 
       # Workspace rules - Caelestia single window gap optimization
       workspace = [
-        "w[tv1]s[false], gapsout:20"  # Single window on workspace gets smaller gaps
-        "f[1]s[false], gapsout:20"  # Single window fullscreen gets smaller gaps
+        "w[tv1]s[false], gapsout:20" # Single window on workspace gets smaller gaps
+        "f[1]s[false], gapsout:20" # Single window fullscreen gets smaller gaps
       ];
     };
   };

@@ -13,15 +13,15 @@
       kitty
       fish
       starship
-      
+
       # Application launcher (Caelestia uses Fuzzel instead of Rofi)
       fuzzel
-      rofi  # Keep as backup
+      rofi # Keep as backup
 
       # File manager (keeping your choice)
       nemo
       gvfs
-      
+
       # Appearance tools
       lxappearance
       adwaita-icon-theme
@@ -40,13 +40,13 @@
       # Audio control
       pavucontrol
       playerctl
-      wireplumber  # Caelestia dependency
+      wireplumber # Caelestia dependency
 
       # Screenshots (Caelestia uses these)
       grim
       slurp
       wl-clipboard
-      swappy  # Screenshot editor
+      swappy # Screenshot editor
 
       # Clipboard management (Caelestia uses cliphist)
       cliphist
@@ -62,7 +62,7 @@
 
       # Night mode / Blue light filter (Caelestia uses gammastep)
       gammastep
-      geoclue2  # Location provider for gammastep
+      geoclue2 # Location provider for gammastep
 
       # System monitor
       btop
@@ -83,17 +83,17 @@
 
       # System utilities
       wlogout
-      trash-cli  # Caelestia uses trash-cli for safe file deletion
-      
+      trash-cli # Caelestia uses trash-cli for safe file deletion
+
       # Shell utilities (Caelestia dependencies)
-      eza  # Modern ls replacement (aliased in fish config)
-      fastfetch  # System info (Caelestia uses this instead of neofetch)
-      jq  # JSON processor
-      inotify-tools  # File monitoring
-      
+      eza # Modern ls replacement (aliased in fish config)
+      fastfetch # System info (Caelestia uses this instead of neofetch)
+      jq # JSON processor
+      inotify-tools # File monitoring
+
       # Fonts (Caelestia requirements)
-      material-symbols  # Material Design icons
-      (nerdfonts.override { fonts = [ "JetBrainsMono" "CascadiaCode" ]; })
+      material-symbols # Material Design icons
+      # (nerdfonts.override {fonts = ["JetBrainsMono" "CascadiaCode"];})
     ];
   };
 }
