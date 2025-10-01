@@ -22,9 +22,15 @@
     # Enable D-Bus for proper service communication
     services.dbus.enable = true;
 
+    # Enable location services for gammastep (Caelestia uses this for auto night light)
+    services.geoclue2.enable = true;
+
     # Enable PAM support for gnome-keyring
     security.pam.services.login.enableGnomeKeyring = true;
     security.pam.services.passwd.enableGnomeKeyring = true;
+
+    # Enable Fish shell system-wide
+    programs.fish.enable = true;
 
     # System packages that need to be available system-wide
     environment.systemPackages = with pkgs; [
