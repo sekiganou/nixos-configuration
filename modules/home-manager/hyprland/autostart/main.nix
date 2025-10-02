@@ -17,11 +17,12 @@
       # Auto-start applications
       exec-once = [
         "gammastep -O 4000" # Start gammastep with night mode
-        "waybar"
-        "dunst"
-        "hyprpaper"
-        "nm-applet --indicator"
-        "blueman-applet"
+        "hyprpanel"
+        # "waybar"
+        # "dunst"
+        # "hyprpaper"
+        # "nm-applet --indicator"
+        # "blueman-applet"
         # Start polkit authentication agent
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         # Start GNOME Keyring daemon

@@ -7,7 +7,7 @@
   config = lib.mkIf config.home-manager.hyprland.enable {
     # Configure dunst for notifications
     services.dunst = {
-      enable = true;
+      enable = false;
       settings = {
         global = {
           width = 300;

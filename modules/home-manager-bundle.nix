@@ -12,6 +12,7 @@
     ./home-manager/discord.nix
     ./home-manager/feishin.nix
     ./home-manager/obsidian.nix
+    ./home-manager/hyprpanel.nix
   ];
   home.packages = [
     pkgs.jellyflix
@@ -26,6 +27,7 @@
   home-manager.discord.enable = lib.mkDefault true;
   home-manager.feishin.enable = lib.mkDefault true;
   home-manager.obsidian.enable = lib.mkDefault true;
+  home-manager.hyprpanel.enable = lib.mkDefault true;
 
   nixpkgs = {
     config.allowUnfree = true;
