@@ -5,7 +5,9 @@
   ...
 }: {
   options = {
-    home-manager.caelestia.enable = lib.mkEnableOption "Enable Caelestia Theme";
+    home-manager.caelestia = {
+      enable = lib.mkEnableOption "Enable Caelestia Theme";
+    };
   };
 
   config = lib.mkIf config.home-manager.caelestia.enable {
@@ -18,7 +20,7 @@
       };
       settings = {
         bar.status = {
-          showBattery = false;
+          showBattery = true;
         };
         paths.wallpaperDir = "~/Pictures/Wallpapers";
       };
