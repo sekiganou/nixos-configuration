@@ -13,6 +13,7 @@
     boot.loader.efi.canTouchEfiVariables = true;
 
     networking.networkmanager.enable = true;
+    services.gvfs.enable = true;
 
     nix.settings.experimental-features = ["nix-command" "flakes"];
 

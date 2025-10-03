@@ -16,7 +16,7 @@
         "$mainMod, C, exec, kitty --hold bash -c 'fastfetch'"
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
-        "$mainMod, E, exec, nemo"
+        "$mainMod, E, exec, nautilus"
         "$mainMod, V, togglefloating,"
         # "$mainMod, space, exec, rofi -show drun"
         "$mainMod, space, exec, caelestia shell drawers toggle launcher"
