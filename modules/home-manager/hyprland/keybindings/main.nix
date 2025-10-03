@@ -13,7 +13,7 @@
       bind = [
         # Application shortcuts
         "$mainMod, W, exec, caelestia shell drawers toggle dashboard"
-        "$mainMod, C, exec, kitty --hold bash -c 'neofetch'"
+        "$mainMod, C, exec, kitty --hold bash -c 'fastfetch'"
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, E, exec, nemo"
@@ -22,7 +22,7 @@
         "$mainMod, space, exec, caelestia shell drawers toggle launcher"
         "$mainMod, P, pseudo,"
         "$mainMod, F, exec, firefox"
-        "$mainMod, N, exec, code ~/nixos-configura`tion"
+        "$mainMod, N, exec, code ~/nixos-configuration"
         # "$mainMod, F, fullscreen,"
         # "SUPER, Escape, exec, wlogout"
         "$mainMod, Escape, exec, caelestia shell drawers toggle session"

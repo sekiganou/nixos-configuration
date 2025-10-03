@@ -10,7 +10,7 @@
       enable = true;
       settings = {
         font_family = "JetBrains Mono Nerd Font";
-        font_size = 11;
+        font_size = 12;
 
         # Theme
         foreground = "#dddddd";
