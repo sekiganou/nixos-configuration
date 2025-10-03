@@ -10,17 +10,24 @@
       enable = true;
       settings = {
         font_family = "JetBrains Mono Nerd Font";
-        font_size = 11;
+        font_size = 12;
 
         # Theme
         foreground = "#dddddd";
         background = "#000000";
-        background_opacity = "0.5";
+        background_opacity = "0.9";
 
         # Window settings
         window_padding_width = 10;
         confirm_os_window_close = 0;
       };
+    };
+
+    programs.foot = {
+      enable = true;
+      # settings = {
+      # font = "JetBrains Mono Nerd Font 11";
+      # background_opacity = "0.9";
     };
 
     programs.zsh = {

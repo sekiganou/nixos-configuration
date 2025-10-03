@@ -12,17 +12,20 @@
       # Keybindings
       bind = [
         # Application shortcuts
-        "$mainMod, C, exec, kitty --hold bash -c 'neofetch'"
+        "$mainMod, W, exec, caelestia shell drawers toggle dashboard"
+        "$mainMod, C, exec, kitty --hold bash -c 'fastfetch'"
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, E, exec, nemo"
         "$mainMod, V, togglefloating,"
-        "$mainMod, space, exec, rofi -show drun"
+        # "$mainMod, space, exec, rofi -show drun"
+        "$mainMod, space, exec, caelestia shell drawers toggle launcher"
         "$mainMod, P, pseudo,"
         "$mainMod, F, exec, firefox"
         "$mainMod, N, exec, code ~/nixos-configuration"
         # "$mainMod, F, fullscreen,"
-        "SUPER, Escape, exec, wlogout"
+        # "SUPER, Escape, exec, wlogout"
+        "$mainMod, Escape, exec, caelestia shell drawers toggle session"
         "CTRL SHIFT, Escape, exec, kitty --hold btop"
 
         # Screenshot

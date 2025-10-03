@@ -17,7 +17,7 @@
       rofi
 
       # File manager
-      #nautilus
+      nautilus
       #lf
       nemo
       gvfs

@@ -9,14 +9,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
-
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  } @ inputs: {
     nixosConfigurations = {
       laptop-asus = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = {inherit inputs;};
         modules = [
           ./hosts/laptop-asus/configuration.nix
           ./modules/system-bundle.nix
@@ -24,13 +32,13 @@
         ];
       };
       desktop-lenovo = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = {inherit inputs;};
         modules = [
           ./hosts/desktop-lenovo/configuration.nix
           ./modules/system-bundle.nix
           inputs.home-manager.nixosModules.default
         ];
       };
-    }; 
+    };
   };
 }

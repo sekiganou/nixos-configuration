@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   imports = [
@@ -12,11 +13,12 @@
     ./home-manager/discord.nix
     ./home-manager/feishin.nix
     ./home-manager/obsidian.nix
+    ./home-manager/caelestia.nix
+    inputs.caelestia-shell.homeManagerModules.default
   ];
-  home.packages = [
-    pkgs.jellyflix
+  home.packages = with pkgs; [
+    jellyflix
   ];
-
   # Set default values for home-manager modules
   home-manager.vscode.enable = lib.mkDefault true;
   home-manager.hyprland.enable = lib.mkDefault true;
@@ -26,6 +28,7 @@
   home-manager.discord.enable = lib.mkDefault true;
   home-manager.feishin.enable = lib.mkDefault true;
   home-manager.obsidian.enable = lib.mkDefault true;
+  home-manager.caelestia.enable = lib.mkDefault true;
 
   nixpkgs = {
     config.allowUnfree = true;

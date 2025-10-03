@@ -16,7 +16,8 @@
       jq
       tree
       htop
-      neofetch
+      # neofetch
+      fastfetch
       timer
     ];
 
