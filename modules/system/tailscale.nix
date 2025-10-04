@@ -43,5 +43,11 @@
         ${tailscale}/bin/tailscale up -authkey ../ts-auth.key
       '';
     };
+
+    networking.firewall.trustedInterfaces = ["tailscale0"];
+    networking.useNetworkd = true;
+
+    networking.firewall.checkReversePath = "loose";
+    networking.firewall.allowedUDPPorts = [41641]; # Tailscale
   };
 }
