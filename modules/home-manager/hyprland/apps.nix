@@ -25,6 +25,8 @@
       adwaita-icon-theme
       papirus-icon-theme
 
+      nwg-look
+
       # Status bar
       waybar
 
