@@ -44,10 +44,10 @@
       '';
     };
 
-    networking.firewall.trustedInterfaces = ["tailscale0"];
-    networking.useNetworkd = true;
-
+    # networking.firewall.trustedInterfaces = ["tailscale0"];
+    # networking.useNetworkd = true;
+    services.tailscale.useRoutingFeatures = "client";
     networking.firewall.checkReversePath = "loose";
-    networking.firewall.allowedUDPPorts = [41641]; # Tailscale
+    # networking.firewall.allowedUDPPorts = [41641]; # Tailscale
   };
 }
