@@ -64,6 +64,15 @@
           weatherLocation = "Asti,IT";
           defaultPlayer = "Feishin";
         };
+        session = {
+          enabled = true;
+          commands = {
+            logout = ["caelestia" "shell" "lock" "lock"];
+            shutdown = ["systemctl" "poweroff"];
+            hibernate = ["systemctl" "hibernate"];
+            reboot = ["systemctl" "reboot"];
+          };
+        };
       };
       cli = {
         enable = true; # Also add caelestia-cli to path
