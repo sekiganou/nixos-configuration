@@ -17,7 +17,8 @@
       # Auto-start applications
       exec-once = [
         "gammastep -O 4000" # Start gammastep with night mode
-        "caelestia shell"
+        "caelestia shell && caelestia shell lock lock"
+        "hyprctl setcursor adwaita 26"
         "hyprpaper"
         "nm-applet --indicator"
         "blueman-applet"
