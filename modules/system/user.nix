@@ -15,7 +15,6 @@
       description = "Alessio Bagno";
       extraGroups = ["networkmanager" "wheel" "docker"]; # Added docker group
       packages = with pkgs; [
-        kdePackages.kate
         nextcloud-client
       ];
     };
