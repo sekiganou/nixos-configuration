@@ -8,7 +8,6 @@
     ./home-manager/vscode.nix
     ./home-manager/hyprland/main.nix
     ./home-manager/dev-tools.nix
-    ./home-manager/chromium.nix
     ./home-manager/nemo.nix
     ./home-manager/discord.nix
     ./home-manager/feishin.nix
@@ -23,7 +22,6 @@
   home-manager.vscode.enable = lib.mkDefault true;
   home-manager.hyprland.enable = lib.mkDefault true;
   home-manager.dev-tools.enable = lib.mkDefault true;
-  home-manager.chromium.enable = lib.mkDefault true;
   home-manager.nemo.enable = lib.mkDefault true;
   home-manager.discord.enable = lib.mkDefault true;
   home-manager.feishin.enable = lib.mkDefault true;

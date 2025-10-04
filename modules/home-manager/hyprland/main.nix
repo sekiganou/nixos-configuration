@@ -11,7 +11,6 @@
     ./keybindings/main.nix
     ./autostart/main.nix
     ./terminal/main.nix
-    ./topbar/main.nix
     ./wallpapers/main.nix
   ];
 

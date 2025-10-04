@@ -14,7 +14,6 @@
     environment.systemPackages = with pkgs; [
       git
       gnumake
-      jetbrains.idea-ultimate
       jdk21_headless
       scenebuilder
       javaPackages.openjfx23

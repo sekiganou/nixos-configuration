@@ -25,7 +25,7 @@
         general = {
           apps = {
             terminal = "kitty";
-            # explorer = "nemo";
+            explorer = "nautilus";
           };
           idle = {
             lockBeforeSleep = true;
@@ -40,14 +40,30 @@
                 idleAction = "dpms off";
                 returnAction = "dpms on";
               }
-              {
-                timeout = 600;
-                idleAction = ["systemctl" "suspend-then-hibernate"];
-              }
+              # {
+              #   timeout = 600;
+              #   idleAction = ["systemctl" "suspend-then-hibernate"];
+              # }
             ];
           };
         };
+        background = {
+          desktopClock = {
+            enabled = true;
+          };
+          enabled = true;
+        };
+        bar = {
+          tray = {
+            recolour = false;
+            compact = true;
+          };
+        };
         paths.wallpaperDir = "~/Pictures/Wallpapers";
+        services = {
+          weatherLocation = "Asti,IT";
+          defaultPlayer = "Feishin";
+        };
       };
       cli = {
         enable = true; # Also add caelestia-cli to path
