@@ -32,11 +32,11 @@
             inhibitWhenAudio = true;
             timeouts = [
               {
-                timeout = 180;
+                timeout = 9999;
                 idleAction = "lock";
               }
               {
-                timeout = 300;
+                timeout = 9999;
                 idleAction = "dpms off";
                 returnAction = "dpms on";
               }
