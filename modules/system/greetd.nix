@@ -23,6 +23,8 @@
       };
     };
 
+    security.pam.services.greetd.enableGnomeKeyring = true;
+
     # Ensure proper tty permissions for greetd
     systemd.services.greetd.serviceConfig = {
       Type = "idle";

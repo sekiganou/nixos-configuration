@@ -17,11 +17,13 @@
       # Auto-start applications
       exec-once = [
         "gammastep -O 4000" # Start gammastep with night mode
-        "caelestia shell && caelestia shell lock lock"
+        "caelestia shell"
         "hyprctl setcursor adwaita 26"
         "hyprpaper"
+        "Feishin"
         "nm-applet --indicator"
         "blueman-applet"
+        "bash -c 'while ! pgrep -f \"caelestia-shell\" > /dev/null 2>&1; do sleep 0.5; done; sleep 1; caelestia shell lock lock'"
         # Start polkit authentication agent
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
         # Start GNOME Keyring daemon
