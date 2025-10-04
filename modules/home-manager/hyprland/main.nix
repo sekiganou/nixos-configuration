@@ -12,7 +12,6 @@
     ./autostart/main.nix
     ./terminal/main.nix
     ./topbar/main.nix
-    ./notifications/main.nix
     ./wallpapers/main.nix
   ];
 

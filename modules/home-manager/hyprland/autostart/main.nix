@@ -17,9 +17,7 @@
       # Auto-start applications
       exec-once = [
         "gammastep -O 4000" # Start gammastep with night mode
-        # "waybar"
         "caelestia shell"
-        "dunst"
         "hyprpaper"
         "nm-applet --indicator"
         "blueman-applet"

@@ -28,9 +28,6 @@
       # Status bar
       waybar
 
-      # Notification daemon
-      dunst
-
       # Wallpaper
       hyprpaper
 
