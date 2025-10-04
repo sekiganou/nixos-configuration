@@ -10,7 +10,7 @@
 
   config = lib.mkIf config.home-manager.chromium.enable {
     programs.chromium = {
-      enable = true;
+      enable = false;
 
       # Optional: Configure extensions
       # extensions = [
@@ -29,23 +29,23 @@
     # Optional: Create custom desktop entries for specific profiles or web apps
     xdg.desktopEntries = {
       # Example: Create a desktop entry for a specific web app
-      gmail = {
-        name = "Gmail";
-        comment = "Gmail web app";
-        exec = "${pkgs.chromium}/bin/chromium --app=https://mail.google.com";
-        icon = "mail-mark-important";
-        categories = ["Network" "Email"];
-        startupNotify = true;
-      };
+      # gmail = {
+      #   name = "Gmail";
+      #   comment = "Gmail web app";
+      #   exec = "${pkgs.chromium}/bin/chromium --app=https://mail.google.com";
+      #   icon = "mail-mark-important";
+      #   categories = ["Network" "Email"];
+      #   startupNotify = true;
+      # };
 
-      youtube = {
-        name = "YouTube";
-        comment = "YouTube web app";
-        exec = "${pkgs.chromium}/bin/chromium --app=https://www.youtube.com";
-        icon = "youtube";
-        categories = ["Network" "Video"];
-        startupNotify = true;
-      };
+      # youtube = {
+      #   name = "YouTube";
+      #   comment = "YouTube web app";
+      #   exec = "${pkgs.chromium}/bin/chromium --app=https://www.youtube.com";
+      #   icon = "youtube";
+      #   categories = ["Network" "Video"];
+      #   startupNotify = true;
+      # };
 
       # jellyfin = {
       #   name = "Jellyfin";
@@ -56,50 +56,50 @@
       #   startupNotify = true;
       # };
 
-      vikunja = {
-        name = "Vikunja";
-        comment = "Vikunja web app";
-        exec = "${pkgs.chromium}/bin/chromium --app=https://vikunja.dojo-vernier.ts.net";
-        icon = "vikunja";
-        categories = ["Network" "Office"];
-        startupNotify = true;
-      };
+      # vikunja = {
+      #   name = "Vikunja";
+      #   comment = "Vikunja web app";
+      #   exec = "${pkgs.chromium}/bin/chromium --app=https://vikunja.dojo-vernier.ts.net";
+      #   icon = "vikunja";
+      #   categories = ["Network" "Office"];
+      #   startupNotify = true;
+      # };
 
-      duelvault = {
-        name = "DuelVault";
-        comment = "DuelVault web app";
-        exec = "${pkgs.chromium}/bin/chromium --app=https://duelvault.dojo-vernier.ts.net";
-        icon = "duelvault";
-        categories = ["Network" "Office"];
-        startupNotify = true;
-      };
+      # duelvault = {
+      #   name = "DuelVault";
+      #   comment = "DuelVault web app";
+      #   exec = "${pkgs.chromium}/bin/chromium --app=https://duelvault.dojo-vernier.ts.net";
+      #   icon = "duelvault";
+      #   categories = ["Network" "Office"];
+      #   startupNotify = true;
+      # };
 
-      tailscale = {
-        name = "Tailscale";
-        comment = "Tailscale web app";
-        exec = "${pkgs.chromium}/bin/chromium --app=https://login.tailscale.com";
-        icon = "tailscale";
-        categories = ["Network" "Office"];
-        startupNotify = true;
-      };
+      # tailscale = {
+      #   name = "Tailscale";
+      #   comment = "Tailscale web app";
+      #   exec = "${pkgs.chromium}/bin/chromium --app=https://login.tailscale.com";
+      #   icon = "tailscale";
+      #   categories = ["Network" "Office"];
+      #   startupNotify = true;
+      # };
 
-      tailscale-interface = {
-        name = "Tailscale Interface";
-        comment = "Tailscale web app";
-        exec = "${pkgs.chromium}/bin/chromium --app=http://100.100.100.100";
-        icon = "tailscale";
-        categories = ["Network" "Office"];
-        startupNotify = true;
-      };
+      # tailscale-interface = {
+      #   name = "Tailscale Interface";
+      #   comment = "Tailscale web app";
+      #   exec = "${pkgs.chromium}/bin/chromium --app=http://100.100.100.100";
+      #   icon = "tailscale";
+      #   categories = ["Network" "Office"];
+      #   startupNotify = true;
+      # };
 
-      rsi = {
-        name = "RSI";
-        comment = "RSI web app";
-        exec = "${pkgs.chromium}/bin/chromium --app=https://www.rsi.ch";
-        icon = "rsi";
-        categories = ["Network" "Video"];
-        startupNotify = true;
-      };
+      # rsi = {
+      #   name = "RSI";
+      #   comment = "RSI web app";
+      #   exec = "${pkgs.chromium}/bin/chromium --app=https://www.rsi.ch";
+      #   icon = "rsi";
+      #   categories = ["Network" "Video"];
+      #   startupNotify = true;
+      # };
 
       # nextcloud = {
       #   name = "Nextcloud";
