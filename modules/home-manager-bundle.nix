@@ -13,12 +13,14 @@
     ./home-manager/feishin.nix
     ./home-manager/obsidian.nix
     ./home-manager/caelestia.nix
+    ./home-manager/fastfetch.nix
     inputs.caelestia-shell.homeManagerModules.default
   ];
   home.packages = with pkgs; [
     jellyflix
   ];
   # Set default values for home-manager modules
+  home-manager.fastfetch.enable = lib.mkDefault true;
   home-manager.vscode.enable = lib.mkDefault true;
   home-manager.hyprland.enable = lib.mkDefault true;
   home-manager.dev-tools.enable = lib.mkDefault true;
