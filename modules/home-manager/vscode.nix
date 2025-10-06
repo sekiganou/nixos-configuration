@@ -60,7 +60,7 @@
         "extensions.autoUpdate" = false;
         "extensions.ignoreRecommendations" = true;
         "workbench.colorTheme" = "Monokai Pro";
-        "workbench.iconTheme" = "Monokai Pro (Filter Octagon) Icons";
+        "workbench.iconTheme" = "Monokai Pro Icons";
         "[nix]" = {
           "editor.defaultFormatter" = "kamadorueda.alejandra";
         };
