@@ -7,6 +7,7 @@
   options = {
     home-manager.caelestia = {
       enable = lib.mkEnableOption "Enable Caelestia Theme";
+      showBattery = lib.mkEnableOption "Show battery status in the bar";
     };
   };
 
@@ -20,7 +21,7 @@
       };
       settings = {
         bar.status = {
-          showBattery = true;
+          showBattery = config.home-manager.caelestia.showBattery;
         };
         general = {
           apps = {

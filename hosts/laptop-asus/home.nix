@@ -87,6 +87,8 @@
 
   home-manager.hyprland.kb_layout = "it";
 
+  home-manager.caelestia.showBattery = true;
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

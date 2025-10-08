@@ -14,6 +14,7 @@
 
     networking.networkmanager.enable = true;
     services.gvfs.enable = true;
+    services.upower.enable = true;
 
     nix.settings.experimental-features = ["nix-command" "flakes"];
 
