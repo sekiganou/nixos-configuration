@@ -62,7 +62,7 @@
         };
         paths.wallpaperDir = "~/Pictures/Wallpapers";
         services = {
-          weatherLocation = "Asti,IT";
+          weatherLocation = "Asti";
           defaultPlayer = "Feishin";
         };
         session = {
