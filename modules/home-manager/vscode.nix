@@ -39,6 +39,7 @@
           dracula-theme.theme-dracula
           tomoki1207.pdf
           kamadorueda.alejandra
+          tailscale.vscode-tailscale
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
