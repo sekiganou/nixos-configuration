@@ -73,6 +73,23 @@
           "editor.defaultFormatter" = "redhat.java";
         };
         "git.confirmSync" = false;
+        "dbcode.connections" = [
+          {
+            "connectionId" = "cOnPEakEz5-ucZduXVwsX";
+            "name" = "duelvault-dev";
+            "driver" = "postgres";
+            "connectionType" = "host";
+            "host" = "localhost";
+            "port" = 5432;
+            "ssl" = false;
+            "username" = "postgres";
+            "password" = "";
+            "savePassword" = "secretStorage";
+            "database" = "mydb";
+            "readOnly" = false;
+            "connectionTimeout" = 30;
+          }
+        ];
       };
     };
   };
