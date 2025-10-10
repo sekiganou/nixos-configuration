@@ -115,6 +115,7 @@
         # "float,class:^(thunar)$,title:^(File Operation Progress)$"
         "float, class:^(progr3\.mail\.client\.app\.MailClientApplication)$"
         "float, class:^(progr3\.mail\.server\.app\.MailServerApplication)$"
+        "float, class:^(io\.gitlab\.idevecore\.Pomodoro)$"
         # "nofocus, class:^(progr3\.mail\.client\.app\.MailClientApplication)$"
         # "nomaxsize, class:^(progr3\.mail\.client\.app\.MailClientApplication)$"
       ];

@@ -19,6 +19,8 @@
   home.packages = with pkgs; [
     jellyflix
     pomodoro-gtk
+    direnv
+    nix-direnv
   ];
   # Set default values for home-manager modules
   home-manager.fastfetch.enable = lib.mkDefault true;

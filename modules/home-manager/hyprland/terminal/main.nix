@@ -38,7 +38,7 @@
       oh-my-zsh = {
         enable = true;
         theme = "robbyrussell"; # pick your theme
-        plugins = ["git" "z" "sudo"];
+        plugins = ["git" "z" "sudo" "direnv"];
       };
 
       shellAliases = {
