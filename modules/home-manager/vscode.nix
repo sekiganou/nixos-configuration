@@ -89,6 +89,21 @@
             "readOnly" = false;
             "connectionTimeout" = 30;
           }
+          {
+            "connectionId" = "ClCDBL4cjVy8APQVupHWZ";
+            "name" = "duelvault";
+            "driver" = "postgres";
+            "connectionType" = "host";
+            "host" = "komodo-production.dojo-vernier.ts.net";
+            "port" = 5001;
+            "ssl" = false;
+            "username" = "duelvault";
+            "password" = "";
+            "savePassword" = "secretStorage";
+            "database" = "duelvault-db";
+            "readOnly" = false;
+            "connectionTimeout" = 30;
+          }
         ];
       };
     };
