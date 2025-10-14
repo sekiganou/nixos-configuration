@@ -15,6 +15,7 @@
     ./home-manager/caelestia.nix
     ./home-manager/fastfetch.nix
     ./home-manager/neovim.nix
+    ./home-manager/kodi.nix
     inputs.caelestia-shell.homeManagerModules.default
   ];
   home.packages = with pkgs; [
@@ -34,6 +35,7 @@
   home-manager.obsidian.enable = lib.mkDefault true;
   home-manager.caelestia.enable = lib.mkDefault true;
   home-manager.neovim.enable = lib.mkDefault true;
+  home-manager.kodi.enable = lib.mkDefault true;
 
   nixpkgs = {
     config.allowUnfree = true;
