@@ -14,10 +14,11 @@
     ./home-manager/obsidian.nix
     ./home-manager/caelestia.nix
     ./home-manager/fastfetch.nix
+    ./home-manager/neovim.nix
     inputs.caelestia-shell.homeManagerModules.default
   ];
   home.packages = with pkgs; [
-    jellyflix
+    # jellyflix
     pomodoro-gtk
     direnv
     nix-direnv
@@ -32,6 +33,7 @@
   home-manager.feishin.enable = lib.mkDefault true;
   home-manager.obsidian.enable = lib.mkDefault true;
   home-manager.caelestia.enable = lib.mkDefault true;
+  home-manager.neovim.enable = lib.mkDefault true;
 
   nixpkgs = {
     config.allowUnfree = true;
