@@ -16,6 +16,10 @@
     services.gvfs.enable = true;
     services.upower.enable = true;
 
+    services.printing.enable = true;
+    services.printing.drivers = [pkgs.hplip]; # optional, depending on your printer
+    services.printing.webInterface = true;
+
     nix.settings.experimental-features = ["nix-command" "flakes"];
 
     # Enable zsh at system level (required when users.defaultUserShell = pkgs.zsh)

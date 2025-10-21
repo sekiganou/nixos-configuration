@@ -40,6 +40,7 @@
           tomoki1207.pdf
           kamadorueda.alejandra
           tailscale.vscode-tailscale
+          # dbcode.dbcode
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
