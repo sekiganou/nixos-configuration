@@ -23,6 +23,8 @@
     pomodoro-gtk
     direnv
     nix-direnv
+    onlyoffice-desktopeditors
+    gimp-with-plugins
   ];
   # Set default values for home-manager modules
   home-manager.fastfetch.enable = lib.mkDefault true;
