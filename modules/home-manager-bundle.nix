@@ -25,6 +25,7 @@
     nix-direnv
     onlyoffice-desktopeditors
     gimp-with-plugins
+    gnome-multi-writer
   ];
   # Set default values for home-manager modules
   home-manager.fastfetch.enable = lib.mkDefault true;
