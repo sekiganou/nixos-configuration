@@ -27,5 +27,8 @@
     users.defaultUserShell = pkgs.zsh;
 
     system.stateVersion = "25.05";
+
+    hardware.bluetooth.enable = true;
+    services.blueman.enable = true;
   };
 }
