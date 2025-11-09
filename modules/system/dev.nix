@@ -16,7 +16,7 @@
       gnumake
       jdk21_headless
       scenebuilder
-      javaPackages.openjfx25
+      javaPackages.openjfx23
     ];
 
     programs.firefox.enable = true;
