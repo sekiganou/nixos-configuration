@@ -40,7 +40,10 @@
   home-manager.neovim.enable = lib.mkDefault true;
   home-manager.kodi.enable = lib.mkDefault true;
 
-  nixpkgs = {
-    config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "electron-36.9.5"
+    ];
   };
 }
