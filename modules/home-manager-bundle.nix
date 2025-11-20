@@ -26,6 +26,7 @@
     onlyoffice-desktopeditors
     gimp-with-plugins
     gnome-multi-writer
+    libresprite
   ];
   # Set default values for home-manager modules
   home-manager.fastfetch.enable = lib.mkDefault true;

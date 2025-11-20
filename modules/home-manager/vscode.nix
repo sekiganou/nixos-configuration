@@ -21,7 +21,7 @@
           ms-vscode-remote.remote-ssh
           jnoortheen.nix-ide
           github.copilot
-          # github.copilot-chat
+          github.copilot-chat
           ms-vscode.makefile-tools
           ms-azuretools.vscode-containers
           prisma.prisma
@@ -32,7 +32,7 @@
           vscjava.vscode-maven
           vscjava.vscode-gradle
           vscjava.vscode-java-dependency
-          visualstudioexptteam.vscodeintellicode
+          # visualstudioexptteam.vscodeintellicode
           esbenp.prettier-vscode
           nonylene.dark-molokai-theme
           catppuccin.catppuccin-vsc
