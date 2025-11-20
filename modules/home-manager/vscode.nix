@@ -40,6 +40,8 @@
           tomoki1207.pdf
           kamadorueda.alejandra
           tailscale.vscode-tailscale
+          ms-vscode.cpptools
+          twxs.cmake
           # dbcode.dbcode
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
@@ -72,6 +74,9 @@
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
         "[java]" = {
           "editor.defaultFormatter" = "redhat.java";
+        };
+        "[cpp]" = {
+          "editor.defaultFormatter" = "ms-vscode.cpptools";
         };
         "git.confirmSync" = false;
         "dbcode.connections" = [
