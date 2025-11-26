@@ -42,6 +42,7 @@
           tailscale.vscode-tailscale
           ms-vscode.cpptools
           twxs.cmake
+          sumneko.lua
           # dbcode.dbcode
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
