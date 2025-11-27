@@ -24,7 +24,9 @@
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
         # Force proper scaling for applications
         "GDK_SCALE,1"
+        "GDK_DPI_SCALE,1"
         "QT_SCALE_FACTOR,1"
+        "_JAVA_OPTIONS,-Dglass.gtk.uiScale=2.0"
         # Keyring integration
         "SSH_AUTH_SOCK,$XDG_RUNTIME_DIR/keyring/ssh"
         "GNOME_KEYRING_CONTROL,$XDG_RUNTIME_DIR/keyring"

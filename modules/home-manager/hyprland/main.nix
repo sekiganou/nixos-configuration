@@ -37,9 +37,9 @@
       enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
-      # settings = {
-      #   xwayland.force_zero_scaling = true;
-      # };
+      settings = {
+        xwayland.force_zero_scaling = true;
+      };
     };
 
     # Configure gammastep for automatic night mode (commented out as per original)
