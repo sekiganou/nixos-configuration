@@ -7,86 +7,121 @@
   options = {
     home-manager.fastfetch.enable = lib.mkEnableOption "Fastfetch configuration";
   };
+
   config = lib.mkIf config.home-manager.fastfetch.enable {
     programs.fastfetch = {
       enable = true;
       settings = {
-        logo = null;
+        logo = {
+          source = "nixos_small";
+          padding = {
+            top = 1;
+          };
+        };
         display = {
-          separator = " ";
-          color = "white";
+          separator = "  ";
         };
         modules = [
-          "break"
+          # Title
+          {
+            type = "title";
+            format = "{#1}╭───────────── {#}{user-name-colored}";
+          }
+          # System Information
           {
             type = "custom";
-            key = "┌─────────────────────────────────────────┐";
-            keyColor = "cyan";
+            format = "{#1}│ {#}System Information";
           }
           {
             type = "os";
-            key = "│ {#cyan}󰻀 {#magenta}OS{#}      ";
-            format = "{#white}{pretty-name}{#cyan} │{#}";
+            key = "{#separator}│  {#keys}󰍹 OS";
           }
           {
             type = "kernel";
-            key = "│ {#cyan} {#magenta}Kernel{#}  ";
-            format = "{#white}{release}{#cyan} │{#}";
+            key = "{#separator}│  {#keys}󰒋 Kernel";
+          }
+          {
+            type = "uptime";
+            key = "{#separator}│  {#keys}󰅐 Uptime";
           }
           {
             type = "packages";
-            key = "│ {#cyan}󰏖 {#magenta}Packages{#}";
-            format = "{#white}{all} (nix){#cyan} │{#}";
+            key = "{#separator}│  {#keys}󰏖 Packages";
+            format = "{all}";
+          }
+          {
+            type = "custom";
+            format = "{#1}│";
+          }
+          # Desktop Environment
+          {
+            type = "custom";
+            format = "{#1}│ {#}Desktop Environment";
+          }
+          {
+            type = "de";
+            key = "{#separator}│  {#keys}󰧨 DE";
+          }
+          {
+            type = "wm";
+            key = "{#separator}│  {#keys}󱂬 WM";
+          }
+          {
+            type = "wmtheme";
+            key = "{#separator}│  {#keys}󰉼 Theme";
+          }
+          {
+            type = "display";
+            key = "{#separator}│  {#keys}󰹑 Resolution";
           }
           {
             type = "shell";
-            key = "│ {#cyan} {#magenta}Shell{#}   ";
-            format = "{#white}{pretty-name}{#cyan} │{#}";
+            key = "{#separator}│  {#keys}󰞷 Shell";
+          }
+          {
+            type = "terminalfont";
+            key = "{#separator}│  {#keys}󰛖 Font";
           }
           {
             type = "custom";
-            key = "├─────────────────────────────────────────┤";
-            keyColor = "cyan";
+            format = "{#1}│";
+          }
+          # Hardware Information
+          {
+            type = "custom";
+            format = "{#1}│ {#}Hardware Information";
           }
           {
-            type = "command";
-            key = "│ {#cyan} {#magenta}Uptime{#}  ";
-            text = "uptime -p | cut -d ' ' -f 2-";
-            format = "{#white}{}{#cyan} │{#}";
+            type = "cpu";
+            key = "{#separator}│  {#keys}󰻠 CPU";
           }
           {
-            type = "command";
-            key = "│ {#cyan} {#magenta}Memory{#}  ";
-            text = "free -h | awk 'NR==2{printf \"%s / %s\",$3,$2}'";
-            format = "{#white}{}{#cyan} │{#}";
+            type = "gpu";
+            key = "{#separator}│  {#keys}󰢮 GPU";
+          }
+          {
+            type = "memory";
+            key = "{#separator}│  {#keys}󰍛 Memory";
+          }
+          {
+            type = "disk";
+            key = "{#separator}│  {#keys}󰋊 Disk (/)";
+            folders = "/";
           }
           {
             type = "custom";
-            key = "├─────────────────────────────────────────┤";
-            keyColor = "cyan";
+            format = "{#1}│";
           }
-          {
-            type = "command";
-            key = "│ {#cyan} {#magenta}User{#}    ";
-            text = "echo $USER";
-            format = "{#white}{}{#cyan} │{#}";
-          }
-          {
-            type = "command";
-            key = "│ {#cyan}󰟀 {#magenta}Host{#}    ";
-            text = "hostnamectl hostname";
-            format = "{#white}{}{#cyan} │{#}";
-          }
-          {
-            type = "custom";
-            key = "└─────────────────────────────────────────┘";
-            keyColor = "cyan";
-          }
-          "break"
+          # Colors
           {
             type = "colors";
-            paddingLeft = 2;
+            key = "{#separator}│";
             symbol = "circle";
+          }
+          # Footer
+          {
+            type = "custom";
+            format = "{#1}╰───────────────────────────────╯";
           }
         ];
       };
