@@ -80,9 +80,9 @@
   ];
 
   home-manager.hyprland.monitors = [
-    "eDP-1,2880x1800@90,0x0,2" # Built-in laptop display with 2x scaling
-    "HDMI-A-1,1920x1080@143.85,2880x0,1" # External 144Hz monitor when connected
-    ",preferred,auto,auto" # Auto-configure other monitors
+    "eDP-1,1440x900@90,0x0,1" # find a better way to deal with this
+    "HDMI-A-1,1920x1080@143.85,1920x0,1"
+    ",preferred,auto,auto"
   ];
 
   home-manager.hyprland.kb_layout = "it";
