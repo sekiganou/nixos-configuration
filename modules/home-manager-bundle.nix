@@ -16,6 +16,7 @@
     ./home-manager/fastfetch.nix
     ./home-manager/neovim.nix
     ./home-manager/kodi.nix
+    ./home-manager/wine-apps.nix
     inputs.caelestia-shell.homeManagerModules.default
   ];
   home.packages = with pkgs; [
@@ -40,6 +41,7 @@
   home-manager.caelestia.enable = lib.mkDefault true;
   home-manager.neovim.enable = lib.mkDefault true;
   home-manager.kodi.enable = lib.mkDefault true;
+  home-manager.wine-apps.enable = lib.mkDefault true;
 
   nixpkgs = {
     config.allowUnfree = true;
