@@ -28,6 +28,8 @@
     gimp-with-plugins
     gnome-multi-writer
     libresprite
+    ventoy
+    gnome-text-editor
   ];
   # Set default values for home-manager modules
   home-manager.fastfetch.enable = lib.mkDefault true;
@@ -44,6 +46,11 @@
   home-manager.wine-apps.enable = lib.mkDefault true;
 
   nixpkgs = {
-    config.allowUnfree = true;
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "ventoy-1.1.07"
+      ];
+    };
   };
 }
