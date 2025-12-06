@@ -52,6 +52,12 @@
             version = "2.0.7";
             sha256 = "sha256-MRFOtadoHlUbyRqm5xYmhuw0LL0qc++gR8g0HWnJJRE=";
           }
+          {
+            name = "html-preview-vscode";
+            publisher = "george-alisson";
+            version = "0.2.5";
+            sha256 = "sha256-1kjhNLFRUashPYko5F7p8gNwe+heT4wKAPZiJsTqgdg=";
+          }
           # {
           #   name = "copilot-chat";
           #   publisher = "GitHub";
