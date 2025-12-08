@@ -30,6 +30,7 @@
     # gnome-multi-writer
     libresprite
     ventoy
+    thunderbird
     # gnome-text-editor
   ];
   # Set default values for home-manager modules

@@ -15,5 +15,8 @@
     services.gnome.gnome-online-accounts.enable = true;
     # optional to use google/nextcloud calendar
     services.gnome.gnome-keyring.enable = true;
+    environment.systemPackages = with pkgs; [
+      gnome-control-center
+    ];
   };
 }
