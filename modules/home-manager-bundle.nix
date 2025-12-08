@@ -17,6 +17,7 @@
     ./home-manager/neovim.nix
     ./home-manager/kodi.nix
     ./home-manager/wine-apps.nix
+    ./home-manager/gnome-apps.nix
     inputs.caelestia-shell.homeManagerModules.default
   ];
   home.packages = with pkgs; [
@@ -26,10 +27,10 @@
     nix-direnv
     onlyoffice-desktopeditors
     gimp-with-plugins
-    gnome-multi-writer
+    # gnome-multi-writer
     libresprite
     ventoy
-    gnome-text-editor
+    # gnome-text-editor
   ];
   # Set default values for home-manager modules
   home-manager.fastfetch.enable = lib.mkDefault true;
@@ -44,6 +45,7 @@
   home-manager.neovim.enable = lib.mkDefault true;
   home-manager.kodi.enable = lib.mkDefault true;
   home-manager.wine-apps.enable = lib.mkDefault true;
+  home-manager.gnome-apps.enable = lib.mkDefault true;
 
   nixpkgs = {
     config = {

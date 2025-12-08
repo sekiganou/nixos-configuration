@@ -13,6 +13,7 @@
     ./system/tailscale.nix
     ./system/user.nix
     ./system/greetd.nix
+    ./system/gnome.nix
   ];
 
   system.locale.enable = lib.mkDefault true;
@@ -24,4 +25,5 @@
   system.plasma6.enable = lib.mkDefault false;
   system.tailscale.enable = lib.mkDefault true;
   system.greetd.enable = lib.mkDefault true;
+  system.gnome.enable = lib.mkDefault true;
 }
