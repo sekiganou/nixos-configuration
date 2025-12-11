@@ -58,6 +58,19 @@
             version = "0.2.5";
             sha256 = "sha256-1kjhNLFRUashPYko5F7p8gNwe+heT4wKAPZiJsTqgdg=";
           }
+          {
+            name = "fxml-language-mode";
+            publisher = "sosuisha";
+            version = "1.1.1";
+            sha256 = "sha256-gy8ZUGHGIk9WRO1eAvTleKhH3QQQ1K0JPOqIxuGJbcs=";
+          }
+          {
+            name = "javafx-controller-support";
+            publisher = "sosuisha";
+            version = "1.2.4";
+            sha256 = "sha256-W2bdAzL2eSNukfhQAlUNtwRRn8x4i18vJFLkX8cBRF0=";
+          }
+
           # {
           #   name = "copilot-chat";
           #   publisher = "GitHub";
