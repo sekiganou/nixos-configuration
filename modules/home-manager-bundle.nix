@@ -31,6 +31,7 @@
     libresprite
     ventoy
     thunderbird
+    osu-lazer-bin
     # gnome-text-editor
   ];
   # Set default values for home-manager modules

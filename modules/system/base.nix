@@ -20,6 +20,8 @@
     services.printing.drivers = [pkgs.hplip]; # optional, depending on your printer
     services.printing.webInterface = true;
 
+    hardware.opentabletdriver.enable = true;
+
     nix.settings.experimental-features = ["nix-command" "flakes"];
 
     # Enable zsh at system level (required when users.defaultUserShell = pkgs.zsh)
