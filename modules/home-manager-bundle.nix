@@ -18,6 +18,7 @@
     ./home-manager/kodi.nix
     ./home-manager/wine-apps.nix
     ./home-manager/gnome-apps.nix
+    ./home-manager/desktop-entries.nix
     inputs.caelestia-shell.homeManagerModules.default
   ];
   home.packages = with pkgs; [
@@ -31,7 +32,6 @@
     libresprite
     ventoy
     thunderbird
-    osu-lazer-bin
     # gnome-text-editor
   ];
   # Set default values for home-manager modules
@@ -48,6 +48,7 @@
   home-manager.kodi.enable = lib.mkDefault true;
   home-manager.wine-apps.enable = lib.mkDefault true;
   home-manager.gnome-apps.enable = lib.mkDefault true;
+  # home-manager.flatpak.enable = lib.mkDefault true;
 
   nixpkgs = {
     config = {

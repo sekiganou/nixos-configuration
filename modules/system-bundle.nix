@@ -14,6 +14,7 @@
     ./system/user.nix
     ./system/greetd.nix
     ./system/gnome.nix
+    ./system/flatpak.nix
   ];
 
   system.locale.enable = lib.mkDefault true;
@@ -26,4 +27,5 @@
   system.tailscale.enable = lib.mkDefault true;
   system.greetd.enable = lib.mkDefault true;
   system.gnome.enable = lib.mkDefault true;
+  system.flatpak.enable = lib.mkDefault true;
 }

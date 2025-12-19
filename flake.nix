@@ -15,11 +15,14 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
   outputs = {
     self,
     nixpkgs,
+    nix-flatpak,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -29,6 +32,7 @@
           ./hosts/laptop-asus/configuration.nix
           ./modules/system-bundle.nix
           inputs.home-manager.nixosModules.default
+          nix-flatpak.nixosModules.nix-flatpak
         ];
       };
       desktop-lenovo = nixpkgs.lib.nixosSystem {
@@ -37,6 +41,7 @@
           ./hosts/desktop-lenovo/configuration.nix
           ./modules/system-bundle.nix
           inputs.home-manager.nixosModules.default
+          nix-flatpak.nixosModules.nix-flatpak
         ];
       };
     };
