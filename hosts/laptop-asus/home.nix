@@ -68,7 +68,8 @@
   ];
 
   home-manager.hyprland.monitors = [
-    "eDP-1,1440x900@90,0x0,1" # find a better way to deal with this
+    # "eDP-1,1440x900@90,0x0,1" # find a better way to deal with this
+    "edp-1,2880x1800@90,0x0,2"
     "HDMI-A-1,1920x1080@143.85,1920x0,1"
     ",preferred,auto,auto"
   ];
