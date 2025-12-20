@@ -32,6 +32,7 @@
     libresprite
     ventoy
     thunderbird
+    syncthingtray
     # gnome-text-editor
   ];
   # Set default values for home-manager modules

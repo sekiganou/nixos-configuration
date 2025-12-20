@@ -15,6 +15,7 @@
     ./system/greetd.nix
     ./system/gnome.nix
     ./system/flatpak.nix
+    ./system/syncthing.nix
   ];
 
   system.locale.enable = lib.mkDefault true;
@@ -28,4 +29,5 @@
   system.greetd.enable = lib.mkDefault true;
   system.gnome.enable = lib.mkDefault true;
   system.flatpak.enable = lib.mkDefault true;
+  system.syncthing.enable = lib.mkDefault true;
 }
