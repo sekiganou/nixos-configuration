@@ -20,6 +20,7 @@
         "$mainMod, V, togglefloating,"
         # "$mainMod, space, exec, rofi -show drun"
         "$mainMod, space, exec, caelestia shell drawers toggle launcher"
+        "$mainMod, T, layoutmsg, togglesplit"
         "$mainMod, P, pseudo,"
         "$mainMod, F, exec, firefox"
         "$mainMod, N, exec, code ~/nixos-configuration"

@@ -13,6 +13,14 @@
     #   type = "Application";
     #   categories = ["Game"];
     # };
+    youtube = {
+      name = "YouTube";
+      comment = "Watch YouTube videos";
+      exec = "firefox -P youtube --kiosk https://www.youtube.com";
+      icon = "/home/alessio/Nextcloud/Pictures/Icons/youtube.png";
+      type = "Application";
+      categories = ["Network"];
+    };
     rufus = {
       name = "Rufus";
       comment = "Create bootable USB drives using Rufus";
