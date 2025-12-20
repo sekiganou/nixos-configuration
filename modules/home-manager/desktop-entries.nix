@@ -5,14 +5,14 @@
   ...
 }: {
   xdg.desktopEntries = {
-    osu = {
-      name = "osu!";
-      comment = "Rhythm game";
-      exec = "flatpak run sh.ppy.osu";
-      icon = "osu";
-      type = "Application";
-      categories = ["Game"];
-    };
+    # osu = {
+    #   name = "osu!";
+    #   comment = "Rhythm game";
+    #   exec = "flatpak run sh.ppy.osu";
+    #   icon = "osu";
+    #   type = "Application";
+    #   categories = ["Game"];
+    # };
     rufus = {
       name = "Rufus";
       comment = "Create bootable USB drives using Rufus";
