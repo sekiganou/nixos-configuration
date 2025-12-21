@@ -9,6 +9,9 @@
   };
 
   config = lib.mkIf config.home-manager.discord.enable {
-    home.packages = [pkgs.discord];
+    home.packages = with pkgs; [
+      discord
+      vesktop
+    ];
   };
 }
