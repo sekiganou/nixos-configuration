@@ -15,7 +15,7 @@
         "$mainMod, W, exec, caelestia shell drawers toggle dashboard"
         "$mainMod, C, exec, kitty --hold bash -c 'fastfetch'"
         "$mainMod, Q, killactive,"
-        "$mainMod, M, exit,"
+        # "$mainMod, M, exit,"
         "$mainMod, E, exec, nautilus --new-window"
         "$mainMod, V, togglefloating,"
         # "$mainMod, space, exec, rofi -show drun"
@@ -77,6 +77,8 @@
         # Special workspace (scratchpad)
         "$mainMod, grave, togglespecialworkspace, magic"
         "$mainMod SHIFT, grave, movetoworkspace, special:magic"
+        "$mainMod, m, togglespecialworkspace, magic"
+        "$mainMod SHIFT, m, movetoworkspace, special:magic"
 
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
