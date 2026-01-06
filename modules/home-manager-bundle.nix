@@ -33,6 +33,7 @@
     ventoy
     thunderbird
     syncthingtray
+    prismlauncher
     # gnome-text-editor
   ];
   # Set default values for home-manager modules
