@@ -109,18 +109,20 @@
         disable_hyprland_logo = false;
       };
 
+      windowrule = "match:class io.gitlab.idevecore.Pomodoro, float on";
+
       # Window rules
-      windowrulev2 = [
-        # "opacity, opacity:0.5, class:.*"
-        # "suppressevent maximize, class:.*"
-        # "float,class:^(pavucontrol)$"
-        # "float,class:^(thunar)$,title:^(File Operation Progress)$"
-        "float, class:^(progr3\.mail\.client\.app\.MailClientApplication)$"
-        "float, class:^(progr3\.mail\.server\.app\.MailServerApplication)$"
-        "float, class:^(io\.gitlab\.idevecore\.Pomodoro)$"
-        # "nofocus, class:^(progr3\.mail\.client\.app\.MailClientApplication)$"
-        # "nomaxsize, class:^(progr3\.mail\.client\.app\.MailClientApplication)$"
-      ];
+      # windowrule = [
+      #   # "opacity, opacity:0.5, class:.*"
+      #   # "suppressevent maximize, class:.*"
+      #   # "float,class:^(pavucontrol)$"
+      #   # "float,class:^(thunar)$,title:^(File Operation Progress)$"
+      #   "match:float, class:^(progr3\.mail\.client\.app\.MailClientApplication)$"
+      #   "match:float, class:^(progr3\.mail\.server\.app\.MailServerApplication)$"
+      #   "match:float, class:^(io\.gitlab\.idevecore\.Pomodoro)$"
+      #   # "nofocus, class:^(progr3\.mail\.client\.app\.MailClientApplication)$"
+      #   # "nomaxsize, class:^(progr3\.mail\.client\.app\.MailClientApplication)$"
+      # ];
     };
   };
 }

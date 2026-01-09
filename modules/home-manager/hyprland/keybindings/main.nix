@@ -15,6 +15,7 @@
         "$mainMod, W, exec, caelestia shell drawers toggle dashboard"
         "$mainMod, C, exec, kitty --hold bash -c 'fastfetch'"
         "$mainMod, Q, killactive,"
+        "$mainMod, I, exec, caelestia shell controlCenter open"
         # "$mainMod, M, exit,"
         "$mainMod, E, exec, nautilus --new-window"
         "$mainMod, V, togglefloating,"

@@ -7,6 +7,7 @@
     },
     "font": {
       "family": {
+        "clock": "Rubik",
         "material": "Material Symbols Rounded",
         "mono": "CaskaydiaCove NF",
         "sans": "Rubik"
@@ -87,6 +88,7 @@
     },
     "enabled": true,
     "visualiser": {
+      "blur": false,
       "enabled": false,
       "autoHide": true,
       "rounding": 1,
@@ -137,6 +139,11 @@
       }
     ],
     "persistent": true,
+    "popouts": {
+      "activeWindow": true,
+      "statusIcons": true,
+      "tray": true
+    },
     "scrollActions": {
       "brightness": true,
       "workspaces": true,
@@ -167,7 +174,17 @@
       "occupiedLabel": "󰮯",
       "perMonitorWorkspaces": true,
       "showWindows": true,
-      "shown": 5
+      "shown": 5,
+      "specialWorkspaceIcons": [
+        {
+          "name": "steam",
+          "icon": "sports_esports"
+        }
+      ]
+    },
+    "excludedScreens": [""],
+    "activeWindow": {
+      "inverted": false
     }
   },
   "border": {
@@ -312,6 +329,7 @@
     "clearThreshold": 0.3,
     "defaultExpireTimeout": 5000,
     "expandThreshold": 20,
+    "openExpanded": false,
     "expire": false
   },
   "osd": {
@@ -327,6 +345,8 @@
   },
   "services": {
     "audioIncrement": 0.1,
+    "brightnessIncrement": 0.1,
+    "maxVolume": 1.0,
     "defaultPlayer": "Spotify",
     "gpuType": "",
     "playerAliases": [
@@ -364,7 +384,20 @@
       "configLoaded": true,
       "dndChanged": true,
       "gameModeChanged": true,
-      "numLockChanged": true
+      "kbLayoutChanged": true,
+      "numLockChanged": true,
+      "vpnChanged": true,
+      "nowPlaying": false
+    },
+    "vpn": {
+      "enabled": false,
+      "provider": [
+        {
+          "name": "wireguard",
+          "interface": "your-connection-name",
+          "displayName": "Wireguard (Your VPN)"
+        }
+      ]
     }
   }
 }
