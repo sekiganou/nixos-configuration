@@ -34,6 +34,7 @@
     thunderbird
     syncthingtray
     prismlauncher
+    gnome-software
     # gnome-text-editor
   ];
   # Set default values for home-manager modules
