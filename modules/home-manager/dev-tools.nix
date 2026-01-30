@@ -25,6 +25,10 @@
       enable = true;
       userName = "Alessio Bagno";
       userEmail = "alessiobagno@gmail.com";
+      package = pkgs.git.override {withLibsecret = true;};
+      settings = {
+        credential.helper = "libsecret";
+      };
     };
 
     # programs.bash = {
