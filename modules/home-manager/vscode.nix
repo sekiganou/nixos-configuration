@@ -43,7 +43,6 @@
           ms-vscode.cpptools
           twxs.cmake
           sumneko.lua
-          # dbcode.dbcode
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
@@ -69,6 +68,12 @@
             publisher = "sosuisha";
             version = "1.2.4";
             sha256 = "sha256-W2bdAzL2eSNukfhQAlUNtwRRn8x4i18vJFLkX8cBRF0=";
+          }
+          {
+            name = "dbcode";
+            publisher = "DBCode";
+            version = "1.26.16";
+            sha256 = "sha256-+cM4GPATtXtfq3JqbIzbPiK8EF3tN/msdcayvUV4mLM=";
           }
 
           # {
@@ -128,6 +133,22 @@
             "savePassword" = "secretStorage";
             "database" = "duelvault-db";
             "readOnly" = false;
+            "connectionTimeout" = 30;
+          }
+          {
+            "connectionId" = "liJKVtImVcBczrYm2IAaF";
+            "name" = "timesheet";
+            "driver" = "postgres";
+            "connectionType" = "host";
+            "host" = "localhost";
+            "port" = 5432;
+            "ssl" = false;
+            "authMethod" = "password";
+            "username" = "postgres";
+            "password" = "";
+            "savePassword" = "secretStorage";
+            "readOnly" = false;
+            "postConnectionSqlType" = "inline";
             "connectionTimeout" = 30;
           }
         ];
