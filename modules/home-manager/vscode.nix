@@ -136,7 +136,7 @@
             "connectionTimeout" = 30;
           }
           {
-            "connectionId" = "liJKVtImVcBczrYm2IAaF";
+            "connectionId" = "U7hksPlp0dqRC0Sf1UrfP";
             "name" = "timesheet";
             "driver" = "postgres";
             "connectionType" = "host";
@@ -147,6 +147,7 @@
             "username" = "postgres";
             "password" = "";
             "savePassword" = "secretStorage";
+            "database" = "postgres";
             "readOnly" = false;
             "postConnectionSqlType" = "inline";
             "connectionTimeout" = 30;
